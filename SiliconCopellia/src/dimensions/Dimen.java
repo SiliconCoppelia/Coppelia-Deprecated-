@@ -3,12 +3,13 @@ package dimensions;
 import java.util.Scanner;
 
 public abstract class Dimen {
-    public int num;
-    public void readInput(String[] args){
-        Scanner scan = new Scanner(System.in);
-        this.num = scan.nextInt();
-        scan.close();
-    }
-
+    private float num;
     public abstract String compare();
+
+    public float readInput(){
+        Scanner scan = new Scanner(System.in);
+        this.num = scan.nextFloat();
+        //scan.close();
+        return this.num;
+    }
 }
