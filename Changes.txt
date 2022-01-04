@@ -1,0 +1,3 @@
+CHEN Yi pu 2022/01/04 16:40 - 17:23
+  - Abstract Class for reading inputs and comparing values (push)
+  - Main Class named Concatenate (push)
