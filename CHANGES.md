@@ -8,3 +8,6 @@ CHEN Yi pu 2022/01/04 18:09
 CHEN Yi pu 2022/01/04 21:19
   - Fix bugs in main class Concatenate (push to [Tommy](https://github.com/SiliconCoppelia/Copellia/blob/Tommy/SiliconCopellia/src/Concatenate.java) branch)
   - Fix bugs in abstract class Dimen (push to [Tommy](https://github.com/SiliconCoppelia/Copellia/tree/Tommy/SiliconCopellia/src/dimensions) branch)
+
+ZHANG Yujing 2022/01/06 2:44
+  - Upload the Affordance, Valence, Distance class
