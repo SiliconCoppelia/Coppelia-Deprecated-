@@ -20,6 +20,8 @@ public class UserIntension extends Dimen{
         scan.close();
         return this.num;
     }
+    
+    @Override
     public String compare(){
         if(this.num < 0.5){
             this.index = 1;
