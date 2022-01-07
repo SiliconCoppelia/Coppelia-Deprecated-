@@ -16,7 +16,6 @@ public class Affordance extends Dimen{
             "Intelligent",
             "Kind of Intelligent",
             "Pretty intelligent",
-            "Very Intelligent",
             "Very Intelligent"};
 
     public Affordance(){
