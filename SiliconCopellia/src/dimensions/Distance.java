@@ -6,11 +6,11 @@ public class Distance extends Dimen{
     private int index;
     public float num;
     private String[] affordance = {
-            "You are weird.",
-            "You make me feel uneasy and nervous",
-            "Sometimes you give me feelings of discomfort.",
-            "I don't really like you.",
-            "You are not my friend"
+            "you are weird.",
+            "you make me feel uneasy and nervous",
+            "sometimes you give me feelings of discomfort",
+            "I don't really like you",
+            "you are not my friend"
     };
 
     public Distance() throws Exception{

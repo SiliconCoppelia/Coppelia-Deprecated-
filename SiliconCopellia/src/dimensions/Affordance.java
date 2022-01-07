@@ -7,16 +7,16 @@ public class Affordance extends Dimen{
     //private int index;
     public float num;
     private String[] affordance = {
-            "Very Stupid",
-            "Stupid",
-            "A little Stupid",
-            "Kind of dumb",
-            "Not so Smart",
-            "Smart",
-            "Intelligent",
-            "Kind of Intelligent",
-            "Pretty intelligent",
-            "Very Intelligent"};
+            "very stupid",
+            "stupid",
+            "a little stupid",
+            "kind of dumb",
+            "not so smart",
+            "smart",
+            "intelligent",
+            "kind of intelligent",
+            "pretty intelligent",
+            "very intelligent"};
 
     public Affordance() throws Exception {
         this.num = super.readInput();
