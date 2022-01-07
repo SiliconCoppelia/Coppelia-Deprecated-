@@ -35,7 +35,6 @@ public class Concatenate {
         }
 
         sent.append(usr.compare());
-
         System.out.println(sent.toString());
 
     }
