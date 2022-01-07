@@ -3,7 +3,7 @@ import dimensions.*;
 public class Concatenate {
 
     public static void main(String[] args){
-        System.out.println("Please enter all the values separated by enters: \n");
+        System.out.println("Please enter all the values separated by enters: ");
 
         Ethics eth = new Ethics();
         Affordance aff = new Affordance();
