@@ -7,23 +7,39 @@ import java.util.Scanner;
  * @Date: 01/07/2022
  * @Description:
  */
-public class Ethics extends Dimen{
+public class Ethics extends Dimen {
 
     private int index;
     public float num;
-    private String[] ethics = {"very bad","bad","little bad","little good","good","very good"};
+    private String[] ethics = {
+            "very bad",
+            "bad",
+            "little bad",
+            "little good",
+            "good",
+            "very good"
+    };
 
 
-    public Ethics(){
-        this.num=readInput();
+    public Ethics() throws Exception{
+        readInput();
     }
 
-    public float readInput(){
+    public void readInput() throws Exception{
+        System.out.println("Please enter the Ethics value: ");
+        try{
+            Scanner scanner=new Scanner(System.in);
+            this.num=scanner.nextFloat();
+            scanner.close();
+            /*
         Scanner scanner=new Scanner(System.in);
         String str=scanner.nextLine();
-        float val=Float.parseFloat(str);
-        scanner.close();
-        return val;
+        float num=Float.parseFloat(str);
+        scanner.close();*/
+        }catch (Exception e){
+            throw new IllegalArgumentException("The problem occurs in Ethics");
+        }
+
     }
 
     @Override

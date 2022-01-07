@@ -11,13 +11,16 @@ public class Relavance extends Dimen {
 
     private int index;
     public float num;
-    private String[] rel=new String[]{"cheat on exams","cooking for home"};
+    private String[] rel=new String[]{
+            "cheat on exams",
+            "cooking for home"
+    };
 
-    public Relavance(){
-        this.num=readInput();
+    public Relavance() throws Exception{
+        readInput();
     }
     @Override
-    public String compare() {
+    public String compare(){
         if(this.num < 0.5){
             this.index = 1;
         } else {
@@ -29,11 +32,19 @@ public class Relavance extends Dimen {
     }
 
     @Override
-    public float readInput() {
+    public void readInput() throws Exception{
+        System.out.println("Please enter the Relavance value: ");
+        try{
+            Scanner scanner=new Scanner(System.in);
+            this.num=scanner.nextFloat();
+            scanner.close();
+            /*
         Scanner scanner=new Scanner(System.in);
         String str=scanner.nextLine();
         float num=Float.parseFloat(str);
-        scanner.close();
-        return num;
+        scanner.close();*/
+        }catch (Exception e){
+            throw new IllegalArgumentException("The problem occurs in Relavance");
+        }
     }
 }

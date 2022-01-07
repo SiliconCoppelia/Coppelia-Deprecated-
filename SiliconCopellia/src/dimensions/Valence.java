@@ -11,18 +11,26 @@ public class Valence extends Dimen{
             "I have positive expectations in helping you",
             "I have negative expectations in helping you",
             "I am certain that I cannot help you"
-            };
+    };
 
-    public Valence(){
-        this.num = readInput();
+    public Valence() throws Exception{
+         readInput();
     }
 
-    public float readInput(){
-        Scanner scan = new Scanner(System.in);
-        String str = scan.nextLine();
-        this.num = Float.parseFloat(str);
-        scan.close();
-        return this.num;
+    public void readInput() throws Exception {
+        System.out.println("Please enter the Valence value: ");
+        try{
+            Scanner scanner=new Scanner(System.in);
+            this.num=scanner.nextFloat();
+            scanner.close();
+            /*
+        Scanner scanner=new Scanner(System.in);
+        String str=scanner.nextLine();
+        float num=Float.parseFloat(str);
+        scanner.close();*/
+        }catch (Exception e){
+            throw new IllegalArgumentException("The problem occurs in Valence");
+        }
     }
 
     public String compare(){
