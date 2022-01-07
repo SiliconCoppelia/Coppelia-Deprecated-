@@ -13,19 +13,10 @@ public class Involvement extends Dimen{
     public float num;
     private String[] invl =new String[]{"I like you so much", "You are fun to be with","I feel close to you","I want to be friends with you"};
 
-    public Involvement(){
-        this.num=readInput();
+    public Involvement() throws Exception{
+        this.num=super.readInput();
     }
 
-
-    @Override
-    public float readInput() {
-        Scanner scanner=new Scanner(System.in);
-        String str=scanner.nextLine();
-        float num=Float.parseFloat(str);
-        scanner.close();
-        return num;
-    }
     @Override
     public String compare() {
         if(this.num < 0.25){

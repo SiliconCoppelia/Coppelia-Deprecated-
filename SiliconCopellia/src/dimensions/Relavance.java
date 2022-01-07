@@ -13,8 +13,8 @@ public class Relavance extends Dimen {
     public float num;
     private String[] rel=new String[]{"cheat on exams","cooking for home"};
 
-    public Relavance(){
-        this.num=readInput();
+    public Relavance() throws Exception{
+        this.num=super.readInput();
     }
     @Override
     public String compare() {
@@ -28,12 +28,5 @@ public class Relavance extends Dimen {
 
     }
 
-    @Override
-    public float readInput() {
-        Scanner scanner=new Scanner(System.in);
-        String str=scanner.nextLine();
-        float num=Float.parseFloat(str);
-        scanner.close();
-        return num;
-    }
+
 }

@@ -8,18 +8,11 @@ public class UserIntension extends Dimen{
     public float num;
     private String[] userIntension = {"Let’s do this together!", "Go find someone else"};
 
-    public UserIntension(){
-        this.num = readInput();
+    public UserIntension() throws Exception{
+        this.num = super.readInput();
         //System.out.println(str.append("The input number is: ").append(super.readInput()));    //For Debugging
     }
-    @Override
-    public float readInput(){
-        Scanner scan = new Scanner(System.in);
-        String str = scan.nextLine();
-        this.num = Float.parseFloat(str);
-        scan.close();
-        return this.num;
-    }
+
     
     @Override
     public String compare(){

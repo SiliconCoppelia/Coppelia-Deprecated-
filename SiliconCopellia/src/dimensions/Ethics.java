@@ -14,17 +14,10 @@ public class Ethics extends Dimen{
     private String[] ethics = {"very bad","bad","little bad","little good","good","very good"};
 
 
-    public Ethics(){
-        this.num=readInput();
+    public Ethics() throws Exception{
+        this.num=super.readInput();
     }
 
-    public float readInput(){
-        Scanner scanner=new Scanner(System.in);
-        String str=scanner.nextLine();
-        float val=Float.parseFloat(str);
-        scanner.close();
-        return val;
-    }
 
     @Override
     public String compare() {

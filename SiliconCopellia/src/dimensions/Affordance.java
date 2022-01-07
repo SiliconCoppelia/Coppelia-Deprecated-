@@ -18,17 +18,10 @@ public class Affordance extends Dimen{
             "Pretty intelligent",
             "Very Intelligent"};
 
-    public Affordance(){
-        this.num = readInput();
+    public Affordance() throws Exception {
+        this.num = super.readInput();
     }
 
-    public float readInput(){
-        Scanner scan = new Scanner(System.in);
-        String str = scan.nextLine();
-        this.num = Float.parseFloat(str);
-        scan.close();
-        return this.num;
-    }
 
     public String compare(){
         double i= this.num/0.1;

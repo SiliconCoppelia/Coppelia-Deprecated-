@@ -13,17 +13,10 @@ public class Valence extends Dimen{
             "I am certain that I cannot help you"
             };
 
-    public Valence(){
-        this.num = readInput();
+    public Valence() throws Exception{
+        this.num = super.readInput();
     }
 
-    public float readInput(){
-        Scanner scan = new Scanner(System.in);
-        String str = scan.nextLine();
-        this.num = Float.parseFloat(str);
-        scan.close();
-        return this.num;
-    }
 
     public String compare(){
         if(this.num < 0.25 && this.num >= 0) this.index = 0;

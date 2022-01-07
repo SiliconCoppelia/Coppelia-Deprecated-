@@ -2,7 +2,7 @@ package dimensions;
 
 import java.util.Scanner;
 
-public class Distance {
+public class Distance extends Dimen{
     private int index;
     public float num;
     private String[] affordance = {
@@ -13,17 +13,11 @@ public class Distance {
             "You are not my friend"
     };
 
-    public Distance(){
-        this.num = readInput();
+    public Distance() throws Exception{
+        this.num = super.readInput();
     }
 
-    public float readInput(){
-        Scanner scan = new Scanner(System.in);
-        String str = scan.nextLine();
-        this.num = Float.parseFloat(str);
-        scan.close();
-        return this.num;
-    }
+
 
     public String compare(){
         if(this.num < 0.2 && this.num >= 0) this.index = 0;
