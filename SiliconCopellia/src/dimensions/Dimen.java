@@ -4,12 +4,16 @@ package dimensions;
 import java.util.Scanner;
 
 public abstract class Dimen {
-    private float num;
     public abstract String compare();
 
-    public float readInput(){
-        Scanner scan = new Scanner(System.in);
-        this.num = scan.nextFloat();
-        return this.num;
+    public float readInput() throws Exception {
+        try{
+            Scanner scan = new Scanner(System.in);
+            float num = scan.nextFloat();
+            return num;
+        }catch (Exception e){
+            throw new Exception();
+        }
+
     }
 }
