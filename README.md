@@ -7,7 +7,7 @@ The project is still in its development phase. Source code and README files will
 
 # To-Do
 - [x] The first tasks will be **mapping the numbers to a pool of fix sentances**
-- [ ]  Audio sound to read out the output string
+- [x]  Audio sound to read out the output string **TTS is utilized**
 
 # Authors
 - [CHEN Yi pu](https://github.com/BanjiBear)
