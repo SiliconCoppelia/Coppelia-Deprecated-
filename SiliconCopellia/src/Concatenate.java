@@ -1,4 +1,6 @@
 import dimensions.*;
+import java.util.Locale;
+
 
 public class Concatenate {
 
@@ -36,6 +38,9 @@ public class Concatenate {
 
         sent.append(usr.compare());
         System.out.println(sent.toString());
+
+        TextToSpeech tts=new TextToSpeech(sent.toString());
+
 
     }
 }
