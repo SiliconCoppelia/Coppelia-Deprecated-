@@ -6,7 +6,8 @@ This project aims to cope with the number produced by Copéllia during the affec
 The project is still in its development phase. Source code and README files will be updated periodically
 
 # To-Do
-The first tasks will be **mapping the numbers to a pool of fix sentances**
+- [x] The first tasks will be **mapping the numbers to a pool of fix sentances**
+- []  Audio sound to read out the output string
 
 # Authors
 - [CHEN Yi pu](https://github.com/BanjiBear)
