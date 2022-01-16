@@ -14,4 +14,4 @@ ZHANG Yujing 2022/01/06 2:44
   - Upload the Affordance, Valence, Distance class
 --------------------------------------------------------------------------------------  
 # Version 2
-Meeting date: Jan 15
+Meeting date: Jan 15  
