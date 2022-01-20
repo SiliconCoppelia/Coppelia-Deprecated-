@@ -2,28 +2,27 @@ package dimensions;
 
 import java.util.Scanner;
 
-public class UserIntension extends Dimen{
+public class UserIntention{
 
     private int index;
     public double num;
     public double valenceNum;
-    private String[] useIntensionPositive = {"I will invite him to go on a date with you.",
+    private final String[] useIntentionPositive = {"I will invite him to go on a date with you.",
             "I want to help you invite him on a date.",
             "I will actively help you arrange a date.",
             "I desperately want to help you arrange a date."};
-    private String[] useIntensionNegative = {"Maybe we could do something else together.",
+    private final String[] useIntentionNegative = {"Maybe we could do something else together.",
             "I have reservations about inviting him to date with you.",
             "I somewhat refuse to help you arrange a date.",
             "I'll have to refuse you directly in helping you arrange a date."};
 
-    public UserIntension(double num, double valenceNum){
+    public UserIntention(double num, double valenceNum){
         this.num = num;
         this.valenceNum = valenceNum;
         //System.out.println(str.append("The input number is: ").append(super.readInput()));    //For Debugging
     }
 
-    
-    @Override
+
     public String compare(){
         double i = 0.25;
         while(i < this.num){
@@ -35,10 +34,10 @@ public class UserIntension extends Dimen{
         else if(i <= 1) this.index = 3;
 
         if(this.valenceNum > 0){
-            return this.useIntensionPositive[this.index];
+            return this.useIntentionPositive[this.index];
         }
         else{
-            return this.useIntensionNegative[this.index];
+            return this.useIntentionNegative[this.index];
         }
     }
 }
