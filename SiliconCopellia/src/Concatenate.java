@@ -5,8 +5,8 @@ import java.lang.*;
 public class Concatenate {
 
     private static StringBuffer inputBuffer = new StringBuffer();
-    Scanner scan = new Scanner(System.in);
-    String strInput = scan.nextLine();
+    private static Scanner scan = new Scanner(System.in);
+    /* String strInput = scan.nextLine(); */
 
     private static double ETHICS;
     private static double[] affordanceFeatures;
@@ -24,17 +24,10 @@ public class Concatenate {
         greetings();
 
         // Step 2: Prompt all the input values and specifies the format explicitly
-        // Specifies input format and corresponding
-        System.out.println("Please type in the values separated by spaces:\nValues for Ethics and its Relevance and Valence, (e.g. 0.63 0.66 0.435): ");
-        System.out.println("Values for Affordance-feature 1 and its Relevance and Valence, (e.g. 0.63 0.66 0.435): ");
-        System.out.println("Values for Affordance-feature 2 and its Relevance and Valence, (e.g. 0.63 0.66 0.435): ");
-        System.out.println("Values for Affordance-feature 3 and its Relevance and Valence, (e.g. 0.63 0.66 0.435): ");
-
-        System.out.println("Please type in the value for Involvement, (e.g. 0.63): ");
-        System.out.println("Please type in the value for Distance, (e.g. 0.63): ");
-        System.out.println("Please type in the value for Use Intention, (e.g. 0.63): ");
-
-
+        // Specifies input format and corresponding dimensions
+        Scanner();
+        
+        // Step 3: Create all object and pass parameters for processing
         Ethics eth = new Ethics(ETHICS);
         Affordance aff = new Affordance(RELEVANCE, affordanceFeatures);
         //Relevance rel = new Relevance();
@@ -42,6 +35,8 @@ public class Concatenate {
         Involvement invl = new Involvement(INVOLVEMENT);
         Distance dist = new Distance(DISTANCE);
         UserIntention usr = new UserIntention(USR_INTENTION, Valence.vectorCalculator());
+        
+        // Step 4: Sentence formulation
 
         System.out.println(sent.toString());
 
@@ -69,5 +64,22 @@ public class Concatenate {
                     "I don't yet have the ability to understand such a difficult command");
             System.exit(0);
         }
+    }
+
+    private static double Scanner(){
+
+        final String[] promptMsg = {"Please type in the values separated by spaces:\nValues for Ethics and its Relevance and Valence, (e.g. 0.63 0.66 0.435): "
+            , "Values for Affordance-feature 1 and its Relevance and Valence, (e.g. 0.63 0.66 0.435):"
+            , "Values for Affordance-feature 2 and its Relevance and Valence, (e.g. 0.63 0.66 0.435): "
+            , "Values for Affordance-feature 3 and its Relevance and Valence, (e.g. 0.63 0.66 0.435): "};
+        final String[] promptMsg2 = {"Please type in the value for Involvement, (e.g. 0.63): "
+                , "Please type in the value for Distance, (e.g. 0.63): "
+                , "Please type in the value for Use Intention, (e.g. 0.63): "};
+
+        for(int i = 0; i < promptMsg.length; i++){
+            String strInput = scan.nextLine();
+            strInput.trim();
+        }
+        return /* double */;
     }
 }
