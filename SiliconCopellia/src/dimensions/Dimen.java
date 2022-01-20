@@ -1,6 +1,6 @@
 package dimensions;
 
-
+/*
 import java.util.Scanner;
 
 public abstract class Dimen {
@@ -9,11 +9,13 @@ public abstract class Dimen {
     public float readInput() throws Exception {
         try{
             Scanner scan = new Scanner(System.in);
-            float num = scan.nextFloat();
-            return num;
+            return scan.nextFloat();
         }catch (Exception e){
             throw new Exception();
         }
 
     }
 }
+
+*/
+// Deprecated
