@@ -1,10 +1,10 @@
 package dimensions;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
-public class Distance extends Dimen{
+public class Distance{
     private int index;
-    public float num;
+    private float num;
     private String[] affordance = {
             "I extremely have reservations about you",
             "I have much resevations about you",
@@ -13,8 +13,8 @@ public class Distance extends Dimen{
             "I hardly have reservations about you"
     };
 
-    public Distance() throws Exception{
-        this.num = super.readInput();
+    public Distance(double DISTANCE){
+
     }
 
 

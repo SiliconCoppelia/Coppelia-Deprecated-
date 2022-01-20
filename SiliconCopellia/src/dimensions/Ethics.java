@@ -1,25 +1,23 @@
 package dimensions;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  * @Author: Anthony
  * @Date: 01/07/2022
  * @Description:
  */
-public class Ethics extends Dimen{
+public class Ethics{
 
     private int index;
-    public float num;
+    private double num;
     private String[] ethics = {"very bad","bad","little bad","little good","good","very good"};
 
-
-    public Ethics() throws Exception{
-        this.num=super.readInput();
+    public Ethics(double ETHICS){
+        num=ETHICS;
     }
 
 
-    @Override
     public String compare() {
         if(this.num < 0.1){
             this.index = 0;

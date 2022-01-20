@@ -1,22 +1,22 @@
 package dimensions;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  * @Author: Anthony
  * @Date: 01/07/2022
  * @Description:
  */
-public class Relavance extends Dimen {
+public class Relavance {
 
     private int index;
-    public float num;
+    private float num;
     private String[] rel=new String[]{"cheat on exams","cooking for home"};
 
-    public Relavance() throws Exception{
-        this.num=super.readInput();
+    public Relavance(double RELEVANCE){
+
     }
-    @Override
+
     public String compare() {
         if(this.num < 0.5){
             this.index = 1;

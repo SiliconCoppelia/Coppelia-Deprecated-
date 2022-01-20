@@ -1,12 +1,13 @@
 package dimensions;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class UserIntention{
 
     private int index;
-    public double num;
-    public double valenceNum;
+    private double num;
+    private double valenceNum;
+
     private final String[] useIntentionPositive = {"I will invite him to go on a date with you.",
             "I want to help you invite him on a date.",
             "I will actively help you arrange a date.",

@@ -1,28 +1,30 @@
 package dimensions;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  * @Author: Anthony, Yooki
  * @Date: 01/07/2022
  * @Description:
  */
-public class Involvement extends Dimen{
+public class Involvement{
 
     private int index;
-    public float num;
+    private float num;
     private String[] invl =new String[]{
         "I feel you as my extremely friend.",
         "I feel you as my close friend.",
         "I feel you as my friend.",
         "I somewhat feel you as my friend.",
-        "I can hardly feel you as my friend."};
+        "I can hardly feel you as my friend."
+    };
 
-    public Involvement() throws Exception{
-        this.num=super.readInput();
+    public Involvement(double INVOLVEMENT){
+
     }
 
-    @Override
+
+
     public String compare() {
         if(this.num < 0.2) this.index = 0; 
         else if(this.num<0.4) this.index = 1;
