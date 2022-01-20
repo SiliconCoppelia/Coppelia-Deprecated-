@@ -19,4 +19,4 @@ Meeting date: Jan 15
 CHEN Yi pu 2022/01/20
   - Deprecated Dimen abstract class
   - New version of UseIntention
-  - Update parameter to pass to other classes in main (Others in main not done)
+  - Update parameter to pass to other classes in main (Step 1 to 3 done)
