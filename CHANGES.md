@@ -15,3 +15,8 @@ ZHANG Yujing 2022/01/06 2:44
 --------------------------------------------------------------------------------------  
 # Version 2
 Meeting date: Jan 15  
+  
+CHEN Yi pu 2022/01/20
+  - Deprecated Dimen abstract class
+  - New version of UseIntention
+  - Update parameter to pass to other classes in main (Others in main not done)
