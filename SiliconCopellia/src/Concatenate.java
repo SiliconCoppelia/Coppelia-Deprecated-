@@ -31,7 +31,7 @@ public class Concatenate {
            In order to calculate the highest relevant features.
         */
         Ethics eth = new Ethics(ETHICS);
-        Affordance aff = new Affordance(rel.index(), affordanceFeatures);
+        Affordance aff = new Affordance(rel.top2_index(), affordanceFeatures);
         Valence val = new Valence(RELEVANCE, VALENCE);
         Involvement invl = new Involvement(INVOLVEMENT);
         Distance dist = new Distance(DISTANCE);
