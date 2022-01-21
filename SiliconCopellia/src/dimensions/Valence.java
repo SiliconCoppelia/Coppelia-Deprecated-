@@ -19,9 +19,8 @@ public class Valence{
         this.rel_index=index;
         this.valence=VALENCE;
         this.num=(this.rel_index[0]*this.valence[0]+
-                 this.rel_index[1]*this.valence[1]+
-                 this.rel_index[2]*this.valence[2]+
-                 this.rel_index[3]*this.valence[3])/4;
+                 this.rel_index[1]*this.valence[this.rel_index[1]]+
+                 this.rel_index[2]*this.valence[this.rel_index[2]])/3;
     }
 
     public double getValence(){
