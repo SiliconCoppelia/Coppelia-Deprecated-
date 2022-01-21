@@ -32,7 +32,7 @@ public class Concatenate {
         */
         Ethics eth = new Ethics(ETHICS);
         Affordance aff = new Affordance(rel.top2_index(), affordanceFeatures);
-        Valence val = new Valence(RELEVANCE, VALENCE);
+        Valence val = new Valence(rel.top2_index(), VALENCE);
         Involvement invl = new Involvement(INVOLVEMENT);
         Distance dist = new Distance(DISTANCE);
         UserIntention usr = new UserIntention(USR_INTENTION, val.vectorCalculator());
