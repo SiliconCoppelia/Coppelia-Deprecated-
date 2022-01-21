@@ -10,10 +10,10 @@ public class Valence{
     private double[] val;
     private double[] rel;
     private String[] valence = {
-            "I am certain that I can help you",
-            "I have positive expectations in helping you",
-            "I have negative expectations in helping you",
-            "I am certain that I cannot help you"
+            "I am certain that I can fulfill your goal",
+            "I have positive expectations in your goal",
+            "I have negative expectations in your goal",
+            "I am certain that I cannot help you with your goal"
             };
 
     public Valence(int[] index,  double[] Relevance, double[] VALENCE){
