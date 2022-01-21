@@ -42,7 +42,7 @@ public class Affordance{
     public Affordance(double[] relvance, double[] affordanceFeatures){
         this.relvance=relvance.clone();
         this.affordanceFeatures=affordanceFeatures.clone();
-        compare();
+
     }
 
     public String[] compare(){
