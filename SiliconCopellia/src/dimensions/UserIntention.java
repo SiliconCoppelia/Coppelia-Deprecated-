@@ -11,7 +11,7 @@ public class UserIntention{
     private final String[] useIntentionPositive = {"I will invite you to go on a date with me.",
             "I want to invite you on a date.",
             "I will actively arrange a date with you.",
-            "I desperately want date you."};
+            "I desperately want to date you."};
     private final String[] useIntentionNegative = {"Maybe we could do something else together.",
             "I have reservations about dating you.",
             "I somewhat refuse to date you.",

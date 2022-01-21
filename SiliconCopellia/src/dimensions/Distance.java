@@ -6,11 +6,11 @@ public class Distance{
     private int index;
     public float num;
     private String[] affordance = {
-            "I extremely have reservations about you.",
-            "I have much resevations about you.",
-            "I have reservations about you.",
-            "I somewhat have reservations about you.",
-            "I hardly have reservations about you."
+            "I extremely have reservations about you",
+            "I have much resevations about you",
+            "I have reservations about you",
+            "I somewhat have reservations about you",
+            "I hardly have reservations about you"
     };
 
     public Distance(double DISTANCE){

@@ -121,6 +121,6 @@ public class Concatenate {
         if(invl.num > dist.num && val.num < 0) sent.append(" ").append(invl.compare()).append(". However, no hard feelings but I'm sorry that you might need to find someone to date with.");
         else if(invl.num > dist.num && val.num > 0) sent.append(invl.compare()).append(", you are really a good person. I'm sure we will get along very well!");
         else if(invl.num <= dist.num && val.num > 0) sent.append(" Though ").append(dist.compare()).append(", I will still date you. Let's give it a try.");
-        else if(invl.num <= dist.num && val.num < 0) sent.append(" ").append(dist.compare()).append(" Please go find someone else!");
+        else if(invl.num <= dist.num && val.num < 0) sent.append(" ").append(dist.compare()).append(". Please go find someone else!");
     }
 }
