@@ -2,7 +2,7 @@ package dimensions;
 
 //import java.util.Scanner;
 
-public class Valence{
+public class Valence<String> {
 
     private int index;
     private double num;
@@ -20,8 +20,7 @@ public class Valence{
         this.val=VALENCE;
         this.num=(this.rel_index[0]*this.val[0]+
                  this.rel_index[1]*this.val[1]+
-                 this.rel_index[2]*this.val[2]+
-                 this.rel_index[3]*this.val[3])/4;
+                 this.rel_index[2]*this.val[2])/3;
     }
 
     public double getValence(){
