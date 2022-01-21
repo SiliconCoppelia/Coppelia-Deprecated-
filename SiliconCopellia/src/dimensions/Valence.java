@@ -29,9 +29,9 @@ public class Valence{
     }
 
     public String compare(){
-        if(this.num < 0.25) this.index = 3;
-        else if (this.num < 0.5) this.index = 2;
-        else if (this.num < 0.75) this.index = 1;
+        if(this.num < -0.5) this.index = 3;
+        else if (this.num < 0) this.index = 2;
+        else if (this.num < 0.5) this.index = 1;
         else  this.index = 0;
 
         return this.affordance[this.index];
