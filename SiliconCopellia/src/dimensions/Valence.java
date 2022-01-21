@@ -11,8 +11,8 @@ public class Valence{
     private double[] rel;
     private String[] valence = {
             "I am certain that I can fulfill your goal",
-            "I have positive expectations in your goal",
-            "I have negative expectations in your goal",
+            "I have positive expectations in fulfilling your goal",
+            "I have negative expectations in fulfilling your goal",
             "I am certain that I cannot help you with your goal"
             };
 

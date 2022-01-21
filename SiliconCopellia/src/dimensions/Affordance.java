@@ -36,7 +36,7 @@ public class Affordance{
     };*/
 
     private String[] condition=new String[]{
-            "you have not pet",
+            "you have no pets",
             "you keep pets"
     };
 
