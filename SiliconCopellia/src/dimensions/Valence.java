@@ -2,10 +2,10 @@ package dimensions;
 
 //import java.util.Scanner;
 
-public class Valence<String> {
+public class Valence{
 
     private int index;
-    private double num;
+    public double num;
     private int[] rel_index;
     private double[] val;
     private double[] rel;
