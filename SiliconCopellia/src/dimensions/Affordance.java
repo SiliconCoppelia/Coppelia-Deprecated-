@@ -21,7 +21,7 @@ public class Affordance{
     private String[] assetStatus=new String[]{
             "poor",
             "relatively poor",
-            "average",
+            "not wealthy but not poor as well",
             "relatively wealthy",
             "wealthy"
     };
