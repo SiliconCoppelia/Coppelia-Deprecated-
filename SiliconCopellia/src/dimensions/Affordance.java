@@ -11,8 +11,8 @@ public class Affordance{
     private String[] realFeatures=new String[2];
     //private String[] affordance = {};
     private String[] age=new String[]{
-            "child",
-            "adolescent",
+            "you are a child",
+            "you are an adolescent",
             "young",
             "mature",
             "old"
@@ -36,8 +36,8 @@ public class Affordance{
     };*/
 
     private String[] condition=new String[]{
-            "have not pet",
-            "keep pets"
+            "you have not pet",
+            "you keep pets"
     };
 
     public Affordance(int[] index, double[] affordanceFeatures){
