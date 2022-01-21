@@ -4,8 +4,8 @@ package dimensions;
 
 public class Distance{
     private int index;
-    public float num;
-    private String[] affordance = {
+    public double num;
+    private String[] distance = {
             "I have extremely reservations about you",
             "I have much reservations about you",
             "I have reservations about you",
@@ -14,7 +14,7 @@ public class Distance{
     };
 
     public Distance(double DISTANCE){
-
+        this.num = DISTANCE;
     }
 
 
@@ -26,6 +26,6 @@ public class Distance{
         else if (this.num < 0.8 && this.num >= 0.6) this.index = 1;
         else  this.index = 0;
 
-        return this.affordance[this.index];
+        return this.distance[this.index];
     }
 }
