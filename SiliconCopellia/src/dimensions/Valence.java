@@ -5,7 +5,9 @@ package dimensions;
 public class Valence{
 
     private int index;
-    private float num;
+    private double num;
+    private int[] rel_index;
+    private double[] valence;
     private String[] affordance = {
             "I am certain that I can help you",
             "I have positive expectations in helping you",
@@ -13,9 +15,18 @@ public class Valence{
             "I am certain that I cannot help you"
             };
 
-    public Valence(double[] RELEVANCE,  VALENCE){
-
+    public Valence(int[] index,  double[] VALENCE){
+        this.rel_index=index;
+        this.valence=VALENCE;
+        this.num=(this.rel_index[0]*this.valence[0]+
+                 this.rel_index[1]*this.valence[1]+
+                 this.rel_index[2]*this.valence[2])/3;
     }
+
+    public double getValence(){
+        return this.num;
+    }
+
     public String compare(){
         if(this.num < 0.25) this.index = 3;
         else if (this.num < 0.5) this.index = 2;
