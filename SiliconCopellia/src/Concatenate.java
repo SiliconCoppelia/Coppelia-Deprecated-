@@ -117,10 +117,10 @@ public class Concatenate {
     private static void sentenceFormulation(Ethics eth, Affordance aff, Valence val, Involvement invl, Distance dist, UserIntention usr){
         sent.append(eth.compare()).append(", ").append(aff.compare()[0]).append(" and ").append(aff.compare()[1]);
         sent.append(", which I think is very important for deciding whether or not to go out with you, thus, ");
-        sent.append(val.compare()).append(". Therefore, ").append(usr.compare()).append(". ");
+        sent.append(val.compare()).append(". Therefore, ").append(usr.compare());
         if(invl.num > dist.num && val.num < 0) sent.append(invl.compare()).append(". However, no hard feelings but I'm sorry that you might need to find someone to date with.");
         else if(invl.num > dist.num && val.num > 0) sent.append(invl.compare()).append(", you are really a good person. I'm sure we will get along very well!");
-        else if(invl.num <= dist.num && val.num > 0) sent.append("Though ").append(dist.compare()).append(", I will still date you. Let's give it a try.");
+        else if(invl.num <= dist.num && val.num > 0) sent.append(" Though ").append(dist.compare()).append(", I will still date you. Let's give it a try.");
         else if(invl.num <= dist.num && val.num < 0) sent.append(dist.compare()).append(" Please go find someone else!");
     }
 }

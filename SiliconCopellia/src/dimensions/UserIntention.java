@@ -8,14 +8,14 @@ public class UserIntention{
     private double num;
     private double valenceNum;
 
-    private final String[] useIntentionPositive = {"I will invite him to go on a date with you.",
-            "I want to help you invite him on a date.",
-            "I will actively help you arrange a date.",
-            "I desperately want to help you arrange a date."};
+    private final String[] useIntentionPositive = {"I will invite you to go on a date with me.",
+            "I want to invite you on a date.",
+            "I will actively arrange a date with you.",
+            "I desperately want date you."};
     private final String[] useIntentionNegative = {"Maybe we could do something else together.",
-            "I have reservations about inviting him to date with you.",
-            "I somewhat refuse to help you arrange a date.",
-            "I'll have to refuse you directly in helping you arrange a date."};
+            "I have reservations about dating you.",
+            "I somewhat refuse to date you.",
+            "I'll have to refuse you directly in arranging a date with you."};
 
     public UserIntention(double num, double valenceNum){
         this.num = num;
