@@ -17,7 +17,7 @@ public class Relevance {
         int[] temp=new int[]{0, 2, 3};
         int minIndex=0;
         double minNum=relevance[0];
-        for(int i=1; i<3; i++){
+        for(int i=1; i<4; i++){
             if(relevance[i]<minNum){
                 minNum=relevance[i];
                 minIndex=i;
