@@ -12,11 +12,11 @@ public class Involvement{
     private int index;
     public double num;
     private String[] invl =new String[]{
-        "I feel you as my extremely friend.",
-        "I feel you as my close friend.",
-        "I feel you as my friend.",
-        "I somewhat feel you as my friend.",
-        "I can hardly feel you as my friend."
+        "I feel you as my extremely friend",
+        "I feel you as my close friend",
+        "I feel you as my friend",
+        "I somewhat feel you as my friend",
+        "I can hardly feel you as my friend"
     };
 
     public Involvement(double INVOLVEMENT){
