@@ -26,11 +26,11 @@ public class Involvement{
 
 
     public String compare() {
-        if(this.num < 0.2) this.index = 0; 
-        else if(this.num<0.4) this.index = 1;
+        if(this.num < 0.2) this.index = 4;
+        else if(this.num<0.4) this.index = 3;
         else if(this.num<0.6) this.index = 2;
-        else if(this.num<0.8) this.index = 3;
-        else this.index = 4;
+        else if(this.num<0.8) this.index = 1;
+        else this.index = 0;
         return this.invl[this.index];
 
     }
