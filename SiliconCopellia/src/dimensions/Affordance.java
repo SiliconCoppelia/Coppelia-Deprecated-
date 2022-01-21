@@ -79,8 +79,8 @@ public class Affordance{
                     realFeatures[i-1]=assetStatus[this.index[2]];
                     break;
                 case 3:
-                    // set what value??? please update when noticing this message
-                    if(this.affordanceFeatures[1]==0){
+
+                    if(this.affordanceFeatures[2]==0){
                         this.index[i]=0;
                     }else{
                         this.index[i]=1;
