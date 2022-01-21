@@ -2,24 +2,24 @@ package dimensions;
 
 //import java.util.Scanner;
 
-public class Relavence {
+public class Relevance {
 
     private int index;
     private float num;
     //private String[] rel=new String[]{"cheat on exams","cooking for home"};
-    private double[] relavence;
+    private double[] relevance;
 
-    public Relavence(double[] RELEVANCE){
-        this.relavence=RELEVANCE;
+    public Relevance(double[] RELEVANCE){
+        this.relevance=RELEVANCE;
     }
 
     public int[] index(){
         int[] temp=new int[]{0, 2, 3};
         int minIndex=0;
-        double minNum=relavence[0];
+        double minNum=relevance[0];
         for(int i=1; i<3; i++){
-            if(relavence[i]<minNum){
-                minNum=relavence[i];
+            if(relevance[i]<minNum){
+                minNum=relevance[i];
                 minIndex=i;
             }
         }
