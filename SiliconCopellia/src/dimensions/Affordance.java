@@ -5,6 +5,7 @@ package dimensions;
 public class Affordance{
 
     private int[] index;
+
     private double[] affordanceFeatures;
     private double[] relvance;
     private String[] realFeatures=new String[2];
@@ -52,40 +53,41 @@ public class Affordance{
             switch(index[i]){
                 case 1:
                     if(this.affordanceFeatures[0] < 14){
-                        this.index[i] = 0;
+                        realFeatures[i-1]=age[0];
                     }else if(this.affordanceFeatures[0] < 21){
-                        this.index[i] = 1;
+                        realFeatures[i-1]=age[1];
                     }else if(this.affordanceFeatures[0]<33){
-                        this.index[i] = 2;
+                        realFeatures[i-1]=age[2];
                     }else if(this.affordanceFeatures[0]<55){
-                        this.index[i] = 3;
+                        realFeatures[i-1]=age[3];
                     }else {
-                        this.index[i] = 4;
+                        realFeatures[i-1]=age[4];
                     }
-                    realFeatures[i-1]=age[this.index[1]];
+
                     break;
                 case 2:
                     if(this.affordanceFeatures[1] < 2000){
-                        this.index[i] = 0;
+                        realFeatures[i-1]=assetStatus[0];
                     }else if(this.affordanceFeatures[1] < 5000){
-                        this.index[i] = 1;
+
+                        realFeatures[i-1]=assetStatus[1];
                     }else if(this.affordanceFeatures[1]<10000){
-                        this.index[i] = 2;
+                        realFeatures[i-1]=assetStatus[2];
                     }else if(this.affordanceFeatures[1]<50000){
-                        this.index[i] = 3;
+                        realFeatures[i-1]=assetStatus[3];
                     }else {
-                        this.index[i] = 4;
+                        realFeatures[i-1]=assetStatus[4];
                     }
-                    realFeatures[i-1]=assetStatus[this.index[2]];
+
                     break;
                 case 3:
 
                     if(this.affordanceFeatures[2]==0){
-                        this.index[i]=0;
+                        realFeatures[i-1]=condition[0];
                     }else{
-                        this.index[i]=1;
+                        realFeatures[i-1]=condition[1];
                     }
-                    realFeatures[i-1]=condition[this.index[3]];
+
                     break;
             }
         }
