@@ -4,11 +4,10 @@ package dimensions;
 
 public class Affordance{
 
-
-    private int[] index;
+    private int[] index=new int[2];
     private double[] affordanceFeatures;
     private double[] relvance;
-    private String[] realFeatures;
+    private String[] realFeatures=new String[2];
     //private String[] affordance = {};
     private String[] age=new String[]{
             "child",
@@ -38,105 +37,68 @@ public class Affordance{
     private String[] condition=new String[]{
             "have not pet",
             "keep pets"
-
     };
 
     public Affordance(double[] relvance, double[] affordanceFeatures){
         this.relvance=relvance.clone();
         this.affordanceFeatures=affordanceFeatures.clone();
+        compare();
     }
-
 
     public String[] compare(){
 
-        if(this.affordanceFeatures[0] < 0.14){
-            this.index[0] = 0;
-        }else if(this.affordanceFeatures[0] < 0.21){
-            this.index[0] = 1;
-        }else if(this.affordanceFeatures[0]<0.33){
-            this.index[0] = 2;
-        }else if(this.affordanceFeatures[0]<0.55){
-            this.index[0] = 3;
-        }else {
-            this.index[0] = 4;
-        }
 
-
-        if(this.affordanceFeatures[1] < 0.2){
-            this.index[1] = 0;
-        }else if(this.affordanceFeatures[1] < 0.4){
-            this.index[1] = 1;
-        }else if(this.affordanceFeatures[1]<0.6){
-            this.index[1] = 2;
-        }else if(this.affordanceFeatures[1]<0.8){
-            this.index[1] = 3;
-        }else {
-            this.index[1] = 4;
-        }
-
-        // set what value??? please update when noticing this message
-        if(this.affordanceFeatures[1]<0.5){
-            this.index[2]=0;
-        }else{
-            this.index[2]=1;
+        for(int i = 1; i < index.length; i++){
+            switch(index[i]){
+                case 1:
+                    if(this.affordanceFeatures[0] < 14){
+                        this.index[i-1] = 0;
+                    }else if(this.affordanceFeatures[0] < 21){
+                        this.index[i-1] = 1;
+                    }else if(this.affordanceFeatures[0]<33){
+                        this.index[i-1] = 2;
+                    }else if(this.affordanceFeatures[0]<55){
+                        this.index[i-1] = 3;
+                    }else {
+                        this.index[i-1] = 4;
+                    }
+                    break;
+                case 2:
+                    if(this.affordanceFeatures[1] < 2000){
+                        this.index[i-1] = 0;
+                    }else if(this.affordanceFeatures[1] < 5000){
+                        this.index[i-1] = 1;
+                    }else if(this.affordanceFeatures[1]<10000){
+                        this.index[i-1] = 2;
+                    }else if(this.affordanceFeatures[1]<50000){
+                        this.index[i-1] = 3;
+                    }else {
+                        this.index[i-1] = 4;
+                    }
+                    break;
+                case 3:
+                    // set what value??? please update when noticing this message
+                    if(this.affordanceFeatures[1]==0){
+                        this.index[i-1]=0;
+                    }else{
+                        this.index[i-1]=1;
+                    }
+                    break;
+            }
         }
 
         realFeatures[0]=age[this.index[0]];
-        realFeatures[1]=age[this.index[1]];
-        realFeatures[2]=age[this.index[2]];
+        realFeatures[1]=assetStatus[this.index[1]];
 
-
-
+        return realFeatures;
     }
 }
 
 // --------------------------------------------------
-package dimensions;
 
-//import java.util.Scanner;
 
-public class Affordance{
-    private int[] index;
-    private double[] affordanceFeatures;
-    //private double[] relevance;
-    private String[] realFeatures;
-    private String[] affordance = {};
-    private String[] age=new String[]{
-            "child",
-            "adolescent",
-            "young",
-            "mature",
-            "old"
-    };
-    private String[] assetStatus=new String[]{
-            "poor",
-            "relatively poor",
-            "average",
-            "relatively wealthy",
-            "wealthy"
-    };
-    private String[] condition=new String[]{
-            "have not pet",
-            "keep pets"
 
-    };
 
-    public Affordance(int[] index, double[] affordanceFeatures){
-        this.index=index;
-        this.affordanceFeatures=affordanceFeatures;
-    }
 
-    public String[] compare(){
-        for(int i = 1; i < index.length; i++){
-            switch(index[i]){
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-            }
-        }
-    }
-}
+
 
