@@ -10,7 +10,7 @@ package dimensions;
 public class Involvement{
 
     private int index;
-    public float num;
+    public double num;
     private String[] invl =new String[]{
         "I feel you as my extremely friend.",
         "I feel you as my close friend.",
@@ -20,7 +20,7 @@ public class Involvement{
     };
 
     public Involvement(double INVOLVEMENT){
-
+        this.num = INVOLVEMENT;
     }
 
 
