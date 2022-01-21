@@ -89,3 +89,54 @@ public class Affordance{
 
     }
 }
+
+// --------------------------------------------------
+package dimensions;
+
+//import java.util.Scanner;
+
+public class Affordance{
+    private int[] index;
+    private double[] affordanceFeatures;
+    //private double[] relevance;
+    private String[] realFeatures;
+    private String[] affordance = {};
+    private String[] age=new String[]{
+            "child",
+            "adolescent",
+            "young",
+            "mature",
+            "old"
+    };
+    private String[] assetStatus=new String[]{
+            "poor",
+            "relatively poor",
+            "average",
+            "relatively wealthy",
+            "wealthy"
+    };
+    private String[] condition=new String[]{
+            "have not pet",
+            "keep pets"
+
+    };
+
+    public Affordance(int[] index, double[] affordanceFeatures){
+        this.index=index;
+        this.affordanceFeatures=affordanceFeatures;
+    }
+
+    public String[] compare(){
+        for(int i = 1; i < index.length; i++){
+            switch(index[i]){
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+            }
+        }
+    }
+}
+
