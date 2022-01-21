@@ -1,6 +1,7 @@
 # Silicon Copéllia
 Silicon Copéllia is a software for making robots response affactively to other agents.
-This project aims to cope with the number produced by Copéllia during the affection/emotion processing process and make Copéllia talks by applying NLP.
+This project aims to cope with the number produced by Copéllia during the affection/emotion processing process and make Copéllia talks by applying NLP.  
+**NOTE: ** The current version is only executable on MAC
 
 # Installation
 The project is still in its development phase. Source code and README files will be updated periodically
