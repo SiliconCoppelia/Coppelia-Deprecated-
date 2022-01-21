@@ -5,7 +5,7 @@ package dimensions;
 public class Valence{
 
     private int index;
-    private double num;
+    public double num;
     private int[] rel_index;
     private double[] valence;
     private String[] affordance = {

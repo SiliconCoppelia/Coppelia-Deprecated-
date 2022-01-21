@@ -4,7 +4,7 @@ package dimensions;
 
 public class Distance{
     private int index;
-    private float num;
+    public float num;
     private String[] affordance = {
             "I extremely have reservations about you",
             "I have much resevations about you",

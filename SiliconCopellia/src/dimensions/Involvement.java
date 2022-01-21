@@ -10,7 +10,7 @@ package dimensions;
 public class Involvement{
 
     private int index;
-    private float num;
+    public float num;
     private String[] invl =new String[]{
         "I feel you as my extremely friend.",
         "I feel you as my close friend.",
