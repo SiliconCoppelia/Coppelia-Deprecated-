@@ -35,7 +35,7 @@ public class Concatenate {
         Valence val = new Valence(rel.top2_index(), VALENCE);
         Involvement invl = new Involvement(INVOLVEMENT);
         Distance dist = new Distance(DISTANCE);
-        UserIntention usr = new UserIntention(USR_INTENTION, val.vectorCalculator());
+        UserIntention usr = new UserIntention(USR_INTENTION, val.num);
 
         // Step 4: Sentence formulation
         sentenceFormulation(eth, aff, val, invl, dist, usr);
