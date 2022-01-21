@@ -13,7 +13,7 @@ public class Relevance {
         this.relevance=RELEVANCE;
     }
 
-    public int[] index(){
+    public int[] top2_index(){
         int[] temp=new int[]{0, 2, 3};
         int minIndex=0;
         double minNum=relevance[0];

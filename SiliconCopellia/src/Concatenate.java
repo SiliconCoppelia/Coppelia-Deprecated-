@@ -28,11 +28,11 @@ public class Concatenate {
         // Step 3: Create all object and pass parameters for processing
         Ethics eth = new Ethics(ETHICS);
         Affordance aff = new Affordance(RELEVANCE, affordanceFeatures);
-        //Relevance rel = new Relevance();
-        Valence val = new Valence(RELEVANCE, VALENCE);
+        Relevance rel = new Relevance(RELEVANCE);
+        Valence val = new Valence(rel.top2_index(), VALENCE);
         Involvement invl = new Involvement(INVOLVEMENT);
         Distance dist = new Distance(DISTANCE);
-        UserIntention usr = new UserIntention(USR_INTENTION, Valence.vectorCalculator());
+        UserIntention usr = new UserIntention(USR_INTENTION, val.getValence());
 
         // Step 4: Sentence formulation
         System.out.println(sent.toString());
