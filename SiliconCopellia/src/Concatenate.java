@@ -47,8 +47,9 @@ public class Concatenate {
         System.out.println(sent.toString());
 
         // Step 5: TTS (Optional)
-        StringBuffer cmd = new StringBuffer("say ");
+        StringBuffer cmd = new StringBuffer("say -v Fiona \"");
         cmd.append(sent.toString());
+        cmd.append("\"");
         Process pr = Runtime.getRuntime().exec(cmd.toString());
 
         /* For debugging
@@ -62,20 +63,20 @@ public class Concatenate {
 
     private static void greetings() throws Exception{
         System.out.println("Hi there, I'm Copéllia, what are we up to today?\n");
-        Runtime.getRuntime().exec("say Hi there, I'm Copéllia, what are we up to today?");
+        Runtime.getRuntime().exec("say -v Fiona \"Hi there, I'm Copéllia, what are we up to today?\"");
 
         Scanner scanGoalsAndConcerns = new Scanner(System.in);
         String str = scanGoalsAndConcerns.nextLine();
         //scanGoalsAndConcerns.close();
         if(str.toLowerCase().contains("date")){
-            Runtime.getRuntime().exec("say Let me think...");
+            Runtime.getRuntime().exec("say -v Fiona \"Let me think...\"");
             System.out.println("Let me think...\n");
         }
         else{
             System.out.println("I'm sorry. " +
                     "I don't yet have the ability to understand such a difficult command\n");
-            Runtime.getRuntime().exec("say I'm sorry. " +
-                    "I don't yet have the ability to understand such a difficult command");
+            Runtime.getRuntime().exec("say -v Fiona \"I'm sorry. " +
+                    "I don't yet have the ability to understand such a difficult command\"");
             System.exit(0);
         }
     }
