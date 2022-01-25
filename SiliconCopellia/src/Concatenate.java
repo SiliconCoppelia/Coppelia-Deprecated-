@@ -83,10 +83,10 @@ public class Concatenate {
 
     private static void InputScanner(){
 
-        final String[] promptMsg = {"Please type in the values separated by enters\nValues for Ethics and its Relevance and Valence, (e.g. 0.63 0.66 0.435):"
-            , "Values for Affordance-feature 1 and its Relevance and Valence, (e.g. 0.63 0.66 0.435):"
-            , "Values for Affordance-feature 2 and its Relevance and Valence, (e.g. 0.63 0.66 0.435):"
-            , "Values for Affordance-feature 3 and its Relevance and Valence, (e.g. 0.63 0.66 0.435):"};
+        final String[] promptMsg = {"Please type in the values separated by enters\nValues for Ethics and its Relevance and Valence(Can be POS or NEG), (e.g. 0.63 0.66 0.435):"
+            , "Values for AGE and its Relevance and Valence(Can be POS or NEG), (e.g. 0.63 0.66 0.435):"
+            , "Values for Monthly Income and its Relevance and Valence(Can be POS or NEG), (e.g. 0.63 0.66 0.435):"
+            , "Values for Number of Pets and its Relevance and Valence(Can be POS or NEG), (e.g. 0.63 0.66 0.435):"};
         final String[] promptMsg2 = {"Please type in the value for Involvement, (e.g. 0.63): "
                 , "Please type in the value for Distance, (e.g. 0.63): "
                 , "Please type in the value for Use Intention, (e.g. 0.63): "};
@@ -121,7 +121,7 @@ public class Concatenate {
     }
 
     private static void sentenceFormulation(Ethics eth, Affordance aff, Valence val, Involvement invl, Distance dist, UserIntention usr){
-        sent.append(eth.compare()).append(", ").append(aff.compare()[0]).append(" and ").append(aff.compare()[1]);
+        sent.append(eth.compare()).append(", ").append(aff.compare()[0]).append(", and ").append(aff.compare()[1]);
         sent.append(", which I think is very important for deciding whether or not to go out with you, thus, ");
         sent.append(val.compare()).append(". Therefore, ").append(usr.compare());
         if(invl.num > dist.num && val.num < 0){
