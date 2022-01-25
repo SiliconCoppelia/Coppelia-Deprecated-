@@ -125,7 +125,7 @@ public class Concatenate {
         sent.append(", which I think is very important for deciding whether or not to go out with you, thus, ");
         sent.append(val.compare()).append(". Therefore, ").append(usr.compare());
         if(invl.num > dist.num && val.num < 0){
-            sent.append(" ").append(invl.compare()).append(". However, no hard feelings but I'm sorry that you might need to find someone to date with.");
+            sent.append(" ").append(invl.compare()).append(". However, no hard feelings but I'm sorry that you might need to find someone else to date with.");
         }
         else if((invl.num > dist.num) && val.num > 0){
             sent.append(" ").append(invl.compare()).append(", you are really a good person. I'm sure we will get along very well!");
