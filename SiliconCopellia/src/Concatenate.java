@@ -83,10 +83,10 @@ public class Concatenate {
 
     private static void InputScanner(){
 
-        final String[] promptMsg = {"Please type in the values separated by enters\nValues for Ethics and its Relevance and Valence(Can be POS or NEG), (e.g. 0.63 0.66 0.435):"
-            , "Values for AGE and its Relevance and Valence(Can be POS or NEG), (e.g. 0.63 0.66 0.435):"
-            , "Values for Monthly Income and its Relevance and Valence(Can be POS or NEG), (e.g. 0.63 0.66 0.435):"
-            , "Values for Number of Pets and its Relevance and Valence(Can be POS or NEG), (e.g. 0.63 0.66 0.435):"};
+        final String[] promptMsg = {"Please type in the values separated by enters\nValues for Ethics and its Relevance and Valence(Can be POS or NEG), (e.g. 0.63 0.66 -0.435):"
+            , "Values for AGE and its Relevance and Valence(Can be POS or NEG), (e.g. 25 0.66 -0.435):"
+            , "Values for Monthly Income and its Relevance and Valence(Can be POS or NEG), (e.g. 7000 0.66 -0.435):"
+            , "Values for Number of Pets and its Relevance and Valence(Can be POS or NEG), (e.g. 2 0.66 -0.435):"};
         final String[] promptMsg2 = {"Please type in the value for Involvement, (e.g. 0.63): "
                 , "Please type in the value for Distance, (e.g. 0.63): "
                 , "Please type in the value for Use Intention, (e.g. 0.63): "};
