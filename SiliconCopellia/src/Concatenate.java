@@ -47,10 +47,9 @@ public class Concatenate {
     }
 
     private static void greetings() throws Exception{
-        System.out.println("Hi, I'm Coppélia.\nI want to go on a date with you.");
+        System.out.println("Hi, I'm Coppélia.\nI want to go on a date with you.\n");
 
         // Currently analyze the agent by prompting self-introduction
-        System.out.println("Can you do a short self-introduction?");
     }
 
     private static void usrIntro(){
@@ -68,6 +67,6 @@ public class Concatenate {
     }
 
     private static void sentenceFormulation(Ethics eth, Affordance aff, Valence val, Involvement invl, Distance dist, UserIntention usr){
-
+        sent.append("You are ").append(aff.compare());
     }
 }
