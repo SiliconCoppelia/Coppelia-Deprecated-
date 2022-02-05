@@ -7,7 +7,7 @@ public class Valence{
     private int index;
     public double num;
     private int[] rel_index;
-    private double[] val;
+    private double val;
     private double[] rel;
     private String[] valence = {
             "I am certain that I can fulfill your goal",
@@ -16,6 +16,7 @@ public class Valence{
             "I am certain that I cannot help you with your goal"
             };
 
+    /*
     public Valence(int[] index,  double[] Relevance, double[] VALENCE){
         this.rel_index=index;
         this.val=VALENCE;
@@ -23,6 +24,9 @@ public class Valence{
         this.num=(this.rel[this.rel_index[0]]*this.val[0]+
                  this.rel[this.rel_index[1]]*this.val[1]+
                  this.rel[this.rel_index[2]]*this.val[2])/3;
+    }*/
+    public Valence(double VALENCE){
+        this.val=VALENCE;
     }
 
     public double getValence(){

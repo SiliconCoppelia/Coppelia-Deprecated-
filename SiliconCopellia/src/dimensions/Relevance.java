@@ -7,13 +7,14 @@ public class Relevance {
     private int index;
     private float num;
     //private String[] rel=new String[]{"cheat on exams","cooking for home"};
-    private double[] relevance;
+    private double relevance;
 
-    public Relevance(double[] RELEVANCE){
+    public Relevance(double RELEVANCE){
         this.relevance=RELEVANCE;
     }
 
-    public int[] top2_index(){
+
+    /*public int[] top2_index(){
         int[] temp=new int[]{0, 2, 3};
         int minIndex=1;
         double minNum=relevance[1];
@@ -37,7 +38,7 @@ public class Relevance {
                 break;
         }
         return temp;
-    }
+    }*/
 
 
 }

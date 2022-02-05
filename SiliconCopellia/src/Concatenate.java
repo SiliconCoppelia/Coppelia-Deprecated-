@@ -29,7 +29,8 @@ public class Concatenate {
 
         // Step 3: Create all object and pass parameters for processing
         Affordance aff = new Affordance(affordanceFeatures);
-        Relevance rel = new Relevance(affordanceFeatures);
+        Relevance[] rel = {new Relevance(0.9), new Relevance(0.7), new Relevance(0.5), new Relevance(0.2)};//can be changed here
+
 
         // Step 4: Sentence formulation
         sentenceFormulation(aff, rel);
@@ -58,7 +59,7 @@ public class Concatenate {
         */
     }
 
-    private static void sentenceFormulation(Affordance aff, Relevance rel){
+    private static void sentenceFormulation(Affordance aff, Relevance[] rel){
         if(countPos(rel) == 3){
             sent.append("not only ").append(aff.compare()[0]).append(" and ").append(aff.compare()[1]).append(" but also you have ");
             if(affordanceFeatures[2] == 1) sent.append(String.valueOf(affordanceFeatures[2])).append(" pet");
@@ -69,7 +70,7 @@ public class Concatenate {
         else if(countPos(rel) == 1){}
     }
 
-    private static int countPos(Relevance rel){
+    private static int countPos(Relevance[] rel){
         int num = 0;
         for(int i = 0; i < rel.RelOfFeatures().length; i++){
             if(rel.RelOfFeatures()[i] > 0) num++;
