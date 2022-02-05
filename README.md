@@ -7,8 +7,7 @@ The project is still in its development phase. Source code and README files will
 
 # To-Do
 - [x] The first tasks will be **mapping the numbers to a pool of fix sentances**
-- [x]  ~~Audio sound to read out the output string(TTS)~~  
-       We only provide mac usage now
+- [x]  ~~Audio sound to read out the output string(TTS)~~(This function is currently disabled)  
 - [x]  Implement version 2 with new model and detailed reasoning between the input features and the output sentence
 - [x]  CHEN Yi pu: Modify the abstract class, Use Intention, and the main function
 - [x]  Yooki: Modify Relevance class, Valence class, Involvement, and Distance
