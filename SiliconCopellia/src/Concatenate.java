@@ -17,7 +17,7 @@ public class Concatenate {
     private static double DISTANCE;
     private static double USR_INTENTION;
 
-    private static StringBuffer sent = new StringBuffer("I find you ");
+    private static StringBuffer sent = new StringBuffer("You are ");
 
     public static void main(String[] args) throws Exception {
 
@@ -28,19 +28,11 @@ public class Concatenate {
         usrIntro();
 
         // Step 3: Create all object and pass parameters for processing
-        Relevance rel = new Relevance(RELEVANCE);
-        /* Relevance has to be created before all other objects,
-           In order to calculate the highest relevant features.
-        */
-        Ethics eth = new Ethics(ETHICS);
-        Affordance aff = new Affordance(rel.top2_index(), affordanceFeatures);
-        Valence val = new Valence(rel.top2_index(), RELEVANCE, VALENCE);
-        Involvement invl = new Involvement(INVOLVEMENT);
-        Distance dist = new Distance(DISTANCE);
-        UserIntention usr = new UserIntention(USR_INTENTION, val.num);
+        Affordance aff = new Affordance(affordanceFeatures);
+        Relevance rel = new Relevance(affordanceFeatures);
 
         // Step 4: Sentence formulation
-        sentenceFormulation(eth, aff, val, invl, dist, usr);
+        sentenceFormulation(aff, rel);
         System.out.println(sent.toString());
 
         System.exit(0);
@@ -66,7 +58,23 @@ public class Concatenate {
         */
     }
 
-    private static void sentenceFormulation(Ethics eth, Affordance aff, Valence val, Involvement invl, Distance dist, UserIntention usr){
-        sent.append("You are ").append(aff.compare());
+    private static void sentenceFormulation(Affordance aff, Relevance rel){
+        if(countPos(rel) == 3){
+            sent.append("not only ").append(aff.compare()[0]).append(" and ").append(aff.compare()[1]).append(" but also you have ");
+            if(affordanceFeatures[2] == 1) sent.append(String.valueOf(affordanceFeatures[2])).append(" pet");
+            else sent.append(String.valueOf(affordanceFeatures[2])).append(" pets");
+        }
+        else if(countPos(rel) == 0){}
+        else if(countPos(rel) == 2){}
+        else if(countPos(rel) == 1){}
+    }
+
+    private static int countPos(Relevance rel){
+        int num = 0;
+        for(int i = 0; i < rel.RelOfFeatures().length; i++){
+            if(rel.RelOfFeatures()[i] > 0) num++;
+        }
+        //System.out.print(num); // For debugging
+        return num;
     }
 }
