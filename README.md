@@ -11,7 +11,11 @@ The project is still in its development phase. Source code and README files will
 - [x]  Implement version 2 with new model and detailed reasoning between the input features and the output sentence
 - [x]  CHEN Yi pu: Modify the abstract class, Use Intention, and the main function
 - [x]  Yooki: Modify Relevance class, Valence class, Involvement, and Distance
-- [x]  Anthony: Ethics and Affordance class
+- [x]  Anthony: Ethics and Affordance class  
+Version 3:  
+- [ ] Main, Affordance, and UseIntension Matrix: Tommy
+- [ ] Involvement and Distance Matrix: Yooki
+- [ ] Relevance and Valance: Anthony
 
 # Authors
 - [CHEN Yi pu](https://github.com/BanjiBear)
