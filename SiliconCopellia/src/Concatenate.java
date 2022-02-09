@@ -29,7 +29,9 @@ public class Concatenate {
 
         // Step 3: Create all object and pass parameters for processing
         Affordance aff = new Affordance(affordanceFeatures);
-        Relevance[] rel = {new Relevance(0.9), new Relevance(0.7), new Relevance(0.5), new Relevance(0.2)};//can be changed here
+        //feature-1: ethics   feature-2: age  feature-3: income  feature-4: pet
+        Relevance[] rel = {new Relevance(0.2), new Relevance(0.9), new Relevance(0.5), new Relevance(0.6)};//can be changed here
+
 
 
         // Step 4: Sentence formulation
