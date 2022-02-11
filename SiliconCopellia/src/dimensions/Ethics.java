@@ -2,19 +2,20 @@ package dimensions;
 
 //import java.util.Scanner;
 
-/**
- * @Author: Anthony
- * @Date: 01/07/2022
- * @Description:
- */
+
 public class Ethics{
 
     private int index;
-    private double num;
-    private String[] ethics = {"very bad","bad","little bad","little good","good","very good"};
+    private float num;
+    private String[] ethics = {"I think you look mad and angry.",
+            "I think you look angry.",
+            "I think you seemed a bit angry.",
+            "I think you appear to be somehow a kind person.",
+            "I think you seemed kind",
+            "I think you seemed very kind."};
 
-    public Ethics(double ETHICS){
-        num=ETHICS;
+    public Ethics(float ETHICS){
+        this.num=ETHICS;
     }
 
 
@@ -35,6 +36,4 @@ public class Ethics{
         }
         return ethics[this.index];
     }
-
-
 }
