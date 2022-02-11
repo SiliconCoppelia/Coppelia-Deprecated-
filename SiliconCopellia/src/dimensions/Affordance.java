@@ -47,5 +47,3 @@ public class Affordance{
         return features;
     }
 }
-
-// --------------------------------------------------
