@@ -2,6 +2,7 @@ import dimensions.*;
 import java.util.*;
 import java.lang.*;
 import javax.swing.*;
+import java.util.Random;
 
 import static java.lang.Integer.parseInt;
 
@@ -9,15 +10,20 @@ public class Concatenate {
 
     private static Scanner scan = new Scanner(System.in);
 
-    private static double ETHICS;
+    private static float ETHICS;
     private static int[] affordanceFeatures = new int[3];
-    private static double[] RELEVANCE = new double[4];      /* form: [eth, affF1, affF2, affF3] */
-    private static double[] VALENCE = new double[4];        /* form: [eth, affF1, affF2, affF3] */
-    private static double INVOLVEMENT;
-    private static double DISTANCE;
-    private static double USR_INTENTION;
+    //private static double[] RELEVANCE = new double[4];      /* form: [eth, affF1, affF2, affF3] */
+    //private static double[] VALENCE = new double[4];        /* form: [eth, affF1, affF2, affF3] */
+    //private static double INVOLVEMENT;
+    //private static double DISTANCE;
+    //private static double USR_INTENTION;
+    private static int num = 0;
+    private static int index = 0;
+    private static String[] valence = {"Your age", "Your income status", "The number of pets you have"};
 
-    private static StringBuffer sent = new StringBuffer("You are ");
+    private static StringBuffer sent1 = new StringBuffer("You are ");   // Ethics and Affordances
+    private static StringBuffer sent2 = new StringBuffer("");           // Relevance: What is important and what is not
+    private static StringBuffer sent3 = new StringBuffer("\n");         // Valence: hope/fear a pos/neg outcome
 
     public static void main(String[] args) throws Exception {
 
@@ -28,15 +34,18 @@ public class Concatenate {
         usrIntro();
 
         // Step 3: Create all object and pass parameters for processing
+        Random rd = new Random(); ETHICS = rd.nextFloat(); // Random Ethics
+        Ethics eth = new Ethics(ETHICS);
         Affordance aff = new Affordance(affordanceFeatures);
-        //feature-1: ethics   feature-2: age  feature-3: income  feature-4: pet
-        Relevance[] rel = {new Relevance(0.2), new Relevance(0.9), new Relevance(0.5), new Relevance(0.6)};//can be changed here
+        Valence val = new Valence(affordanceFeatures);
+        // feature-1: ethics   feature-2: age  feature-3: income  feature-4: pet
+        // For Users: All relevance can be changed here
+        Relevance[] rel = {new Relevance(0.657), new Relevance(0.9), new Relevance(0.312), new Relevance(0.76)};
 
-
-
-        // Step 4: Sentence formulation
-        sentenceFormulation(aff, rel);
-        System.out.println(sent.toString());
+        // Step 4: sentence formulation
+        System.out.println(eth.compare());
+        sentenceFormulation(aff, val);
+        System.out.println(sent1.toString());
 
         System.exit(0);
     }
@@ -61,23 +70,81 @@ public class Concatenate {
         */
     }
 
-    private static void sentenceFormulation(Affordance aff, Relevance[] rel){
-        if(countPos(rel) == 3){
-            sent.append("not only ").append(aff.compare()[0]).append(" and ").append(aff.compare()[1]).append(" but also you have ");
-            if(affordanceFeatures[2] == 1) sent.append(String.valueOf(affordanceFeatures[2])).append(" pet");
-            else sent.append(String.valueOf(affordanceFeatures[2])).append(" pets");
+    private static void sentenceFormulation(Affordance aff, Valence val){
+        countPos(val);
+        if(num == 3){
+            sent1.append("not only ").append(aff.compare()[0]).append(" and ").append(aff.compare()[1]).append(" but also keeping ");
+            if(affordanceFeatures[2] == 1) sent1.append(String.valueOf(affordanceFeatures[2])).append(" pet.");
+            else sent1.append(String.valueOf(affordanceFeatures[2])).append(" pets.");
+
+            // sent3
+            sent3.append("Not only ");
         }
-        else if(countPos(rel) == 0){}
-        else if(countPos(rel) == 2){}
-        else if(countPos(rel) == 1){}
+        else if(num == 0){
+            sent1.append(aff.compare()[0]).append(", ").append(aff.compare()[1]);
+            //System.out.print(affordanceFeatures[2]); // For debugging
+            if(affordanceFeatures[2] == 0) sent1.append(", and you don't keep pets.");
+            else sent1.append(", and you keep ").append(String.valueOf(affordanceFeatures[2])).append(" pets");
+        }
+        else if(num == 2){
+            if(negIndex(val) == 0){
+                sent1.append(aff.compare()[1]).append(" and you keep ");
+                if(affordanceFeatures[2] == 1) sent1.append(String.valueOf(affordanceFeatures[2])).append(" pet");
+                else sent1.append(String.valueOf(affordanceFeatures[2])).append(" pets");
+                sent1.append(" but you are ").append(aff.compare()[0]);
+            }
+            else if(negIndex(val) == 1){
+                sent1.append(aff.compare()[0]).append(" and you keep ");
+                if(affordanceFeatures[2] == 1) sent1.append(String.valueOf(affordanceFeatures[2])).append(" pet");
+                else sent1.append(String.valueOf(affordanceFeatures[2])).append(" pets");
+                sent1.append(" but you are ").append(aff.compare()[1]);
+            }
+            else if(negIndex(val) == 2){
+                sent1.append(aff.compare()[0]).append(" and ").append(aff.compare()[1]).append(" but you ");
+                if(affordanceFeatures[2] == 0) sent1.append("don't keep pets");
+                else sent1.append("keep ").append(String.valueOf(affordanceFeatures[2])).append(" pets");
+            }
+        }
+        else if(num == 1){
+            if(posIndex(val) == 0){
+                sent1.append(aff.compare()[0]).append(" yet you are ").append(aff.compare()[1]).append(" and you ");
+                if(affordanceFeatures[2] == 0) sent1.append("don't keep pets");
+                else sent1.append("have ").append(String.valueOf(affordanceFeatures[2])).append(" pets");
+            }
+            else if(posIndex(val) == 1){
+                sent1.append(aff.compare()[1]).append(" yet you are ").append(aff.compare()[0]).append(" and you ");
+                if(affordanceFeatures[2] == 0) sent1.append("don't keep pets");
+                else sent1.append("have ").append(String.valueOf(affordanceFeatures[2])).append(" pets");
+            }
+            else if(posIndex(val) == 2){
+                sent1.append(aff.compare()[0]).append(" and ").append(aff.compare()[1]).append(" but you keep ");
+                if(affordanceFeatures[2] == 1) sent1.append(String.valueOf(affordanceFeatures[2])).append(" pet");
+                else sent1.append(String.valueOf(affordanceFeatures[2])).append(" pets");
+            }
+        }
     }
 
-    private static int countPos(Relevance[] rel){
-        int num = 0;
-        for(int i = 0; i < rel.RelOfFeatures().length; i++){
-            if(rel.RelOfFeatures()[i] > 0) num++;
+    private static int countPos(Valence val){
+        for(int i = 0; i < val.ValOfFeatures().length; i++){
+            if(val.ValOfFeatures()[i] > 0) num++;
         }
-        //System.out.print(num); // For debugging
+        //System.out.print(num); System.out.println("\n"); // For debugging
         return num;
+    }
+
+    private static int posIndex(Valence val){
+        for(int i = 0; i < val.ValOfFeatures().length; i++){
+            if(val.ValOfFeatures()[i] > 0) index = i;
+        }
+
+        return index;
+    }
+    private static int negIndex(Valence val){
+        for(int i = 0; i < val.ValOfFeatures().length; i++){
+            if(val.ValOfFeatures()[i] < 0) index = i;
+        }
+        //System.out.print(index); //For debugging
+
+        return index;
     }
 }
