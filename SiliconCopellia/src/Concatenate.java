@@ -37,7 +37,7 @@ public class Concatenate {
         Random rd = new Random(); ETHICS = rd.nextFloat(); // Random Ethics
         Ethics eth = new Ethics(ETHICS);
         Affordance aff = new Affordance(affordanceFeatures);
-        Valence val = new Valence(affordanceFeatures);
+        Valence val = new Valence(ETHICS, affordanceFeatures);
         // feature-1: ethics   feature-2: age  feature-3: income  feature-4: pet
         // For Users: All relevance can be changed here
         Relevance[] rel = {new Relevance(0.657), new Relevance(0.9), new Relevance(0.312), new Relevance(0.76)};
