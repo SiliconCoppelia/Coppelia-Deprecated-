@@ -19,12 +19,20 @@ public class Involvement{
         "I can hardly feel you as my friend"
     };
 
-    public Involvement(double INVOLVEMENT){
-        this.num = INVOLVEMENT;
+    public Involvement(double ethics, double age, double income, double pet, double irrelative, double valence){
+        double [][] arr={{ethics},{age},{income},{pet},{irrelative},{valence}};
+        double [][] inv={{1/6,1/6,1/6,1/6,1/6,1/6}};
+        MatrixComputation counterIndicative=new MatrixComputation(6,1, arr);
+        MatrixComputation involvement=new MatrixComputation(1,6, inv);
+        this.num = involvement.multiple(involvement, counterIndicative)[0][0];
+    }
+
+    public String getDistance() {
+        return invl[(int)num];
     }
 
 
-
+/*
     public String compare() {
         if(this.num < 0.2) this.index = 4;
         else if(this.num<0.4) this.index = 3;
@@ -34,4 +42,6 @@ public class Involvement{
         return this.invl[this.index];
 
     }
+
+ */
 }

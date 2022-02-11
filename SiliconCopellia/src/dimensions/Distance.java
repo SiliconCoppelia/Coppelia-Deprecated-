@@ -13,12 +13,19 @@ public class Distance{
             "I have little reservations about you"
     };
 
-    public Distance(double DISTANCE){
-        this.num = DISTANCE;
+    public Distance(double ethics, double age, double income, double pet, double irrelative, double valence){
+        double [][] arr={{ethics},{age},{income},{pet},{irrelative},{valence}};
+        double [][] dis={{1/6,1/6,1/6,1/6,1/6,1/6}};
+        MatrixComputation counterIndicative=new MatrixComputation(6,1, arr);
+        MatrixComputation distance=new MatrixComputation(1,6, dis);
+        this.num = distance.multiple(distance, counterIndicative)[0][0];
     }
 
+    public String getDistance() {
+        return distance[(int)num];
+    }
 
-
+    /*
     public String compare(){
         if(this.num < 0.2 && this.num >= 0) this.index = 4;
         else if (this.num < 0.4 && this.num >= 0.2) this.index = 3;
@@ -27,5 +34,5 @@ public class Distance{
         else  this.index = 0;
 
         return this.distance[this.index];
-    }
+    }*/
 }
