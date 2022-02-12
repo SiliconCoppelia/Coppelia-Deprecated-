@@ -20,11 +20,12 @@ public class UserIntention{
             "I'll have to refuse you directly in arranging a date with you."};
 
     public UserIntention(double ethics, double age, double income, double pet){
-        double [][] arr={{ethics},{age},{income},{pet}};
-        double [][] B_ui={{1/4,1/4,1/4,1/4}};
-        MatrixComputation counterIndicative=new MatrixComputation(4,1, arr);
-        MatrixComputation userIntention=new MatrixComputation(1,4, B_ui);
-        this.num = userIntention.multiple(userIntention, counterIndicative)[0][0];
+        double [][] arr={{ethics,age,income,pet}};
+        double weight=(double) 1/(double) 4;
+        double [][] B_ui={{weight},{weight},{weight},{weight}};
+        MatrixComputation counterIndicative=new MatrixComputation(1,4, arr);
+        MatrixComputation userIntention=new MatrixComputation(4,1, B_ui);
+        this.num = userIntention.multiple(counterIndicative, userIntention)[0][0];
         //this.num = num;
         //this.valenceNum = valenceNum;
         //System.out.println(str.append("The input number is: ").append(super.readInput()));    //For Debugging
@@ -32,10 +33,10 @@ public class UserIntention{
 
     public String getUseIntention() {
         if(this.num>0.5){
-            return useIntentionPositive[(int)((this.num-0.5)*0.25)];
+            return useIntentionPositive[(int)((this.num-0.5)*2.5)];
         }
         else{
-            return useIntentionNegative[(int)(this.num*0.25)];
+            return useIntentionNegative[(int)(this.num*2.5)];
         }
 
     }

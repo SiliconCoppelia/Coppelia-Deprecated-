@@ -20,14 +20,21 @@ public class Involvement{
     };
 
     public Involvement(double ethics, double age, double income, double pet, double relevance, double valence){
-        double [][] arr={{ethics},{age},{income},{pet},{relevance},{valence}};
-        double [][] B_i={{1/6,1/6,1/6,1/6,1/6,1/6}};
-        MatrixComputation counterIndicative=new MatrixComputation(6,1, arr);
-        MatrixComputation involvement=new MatrixComputation(1,6, B_i);
-        this.num = involvement.multiple(involvement, counterIndicative)[0][0];
+
+        double [][] arr={{ethics,age,income,pet,relevance,valence}};
+        double weight=(double) 1/(double) 6;
+        double [][] B_i={{weight},{weight},{weight},{weight},{weight},{weight}};
+        MatrixComputation counterIndicative=new MatrixComputation(1,6, arr);
+        MatrixComputation involvement=new MatrixComputation(6,1, B_i);
+        //System.out.println("invl is "+involvement.multiple(involvement,counterIndicative));
+        //System.out.println("Involvement");
+        this.num = involvement.multiple(counterIndicative,involvement)[0][0];
+        //System.out.println("The num is "+this.num);
+        //System.out.println();
     }
 
     public String getDistance() {
+
         return invl[(int)(this.num*5)];
     }
 

@@ -46,21 +46,32 @@ public class MatrixComputation {
             System.out.print("Error! "+ a.getColumn() + " is not equal to " + b.getRow());
 
         double[][] end=new double[a.getRow()][b.getColumn()];
+        //System.out.println("a.getRow() is "+ a.getRow());
+        //System.out.println("b.getRow() is "+ b.getRow());
+        //System.out.println("a.getColumn() is "+ a.getColumn());
+        //System.out.println("b.getColumn() is "+ b.getColumn());
 
-        int num;
 
-        //int count=0;
-        for(int c=0; c<b.getColumn(); c++){
-            for(int i=0; i<a.getRow(); i++){
-                num=0;
-                for(int j=0; j<b.getRow(); j++) {
-                    num+=a.getArr()[i][j]*b.getArr()[j][c];
-                    //System.out.println("-----"+"["+i+","+j+"] "+c+"/// "+num);
+        int i=0,j=0,c=0;
+        double num;
+        for(i=0; i<a.getRow(); i++){
+            num=0;
+            for(j=0; j<b.getColumn(); j++) {
+                for(c=0; c<a.getColumn(); c++){
+                    //System.out.println("-----"+"["+i+","+j+"] "+c+"/// ");
+                    //System.out.println("a.getArr()[i][j]"+a.getArr()[i][c]);
+                    //System.out.println("b.getArr()[j][c]"+b.getArr()[c][j]);
+                    num+=a.getArr()[i][c]*b.getArr()[c][j];
+                    //System.out.println("num:"+num);
+                    //System.out.println("------");
+                    //System.out.println("-----"+"["+i+","+j+"] "+c+"/// "+a.getArr()[i][j]+"*"+b.getArr()[j][c]+"="+num);
                 }
-                end[i][c]=num;
+                //System.out.println("["+i+"] ["+j+"] :"+num);
+                end[i][j]=num;
             }
-            //System.out.println("--跳出循环后的i,j---"+"["+i+","+j+"]"+c+"### ");
+
         }
+        //System.out.println("matrix result "+"");
         return end;
     }
 }
