@@ -307,6 +307,6 @@ public class Concatenate {
     }
 
     private static void invlNdistFormulation(Affordance aff, Valence val, Relevance[] rel){
-
+        Involvement inv=new Involvement(aff[0],)
     }
 }
