@@ -37,7 +37,8 @@ public class Concatenate {
         // feature-1: ethics   feature-2: age  feature-3: income  feature-4: pet
         // For Users: All relevance can be changed here
         Relevance[] rel = {new Relevance(0.657), new Relevance(0.9), new Relevance(0.312), new Relevance(0.76)};
-        //Involvement invl = new Involvement(ETHICS, affordanceFeatures[0], affordanceFeatures[0], affordanceFeatures[0], double irrelative, double valence);
+        Involvement invl = new Involvement(ETHICS, aff.convert(affordanceFeatures[0], 0), aff.convert(affordanceFeatures[1], 1), aff.convert(affordanceFeatures[2], 2),  0.75,  0.4);
+        Distance dist = new Distance(ETHICS, aff.convert(affordanceFeatures[0], 0), aff.convert(affordanceFeatures[1], 1), aff.convert(affordanceFeatures[2], 2),  0.25,  0.4);
 
         // Step 4: sentence formulation
         System.out.println(eth.compare());
