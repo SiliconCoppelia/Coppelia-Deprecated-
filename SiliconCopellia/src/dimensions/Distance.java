@@ -13,8 +13,8 @@ public class Distance{
             "I have little reservations about you"
     };
 
-    public Distance(double ethics, double age, double income, double pet, double irrelative, double valence){
-        double [][] arr={{ethics},{age},{income},{pet},{irrelative},{valence}};
+    public Distance(double ethics, double age, double income, double pet, double irrelevance, double valence){
+        double [][] arr={{ethics},{age},{income},{pet},{irrelevance},{valence}};
         double [][] dis={{1/6,1/6,1/6,1/6,1/6,1/6}};
         MatrixComputation counterIndicative=new MatrixComputation(6,1, arr);
         MatrixComputation distance=new MatrixComputation(1,6, dis);

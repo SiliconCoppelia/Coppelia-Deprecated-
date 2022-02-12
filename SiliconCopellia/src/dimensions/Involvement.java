@@ -19,8 +19,8 @@ public class Involvement{
         "I can hardly feel you as my friend"
     };
 
-    public Involvement(double ethics, double age, double income, double pet, double irrelative, double valence){
-        double [][] arr={{ethics},{age},{income},{pet},{irrelative},{valence}};
+    public Involvement(double ethics, double age, double income, double pet, double relevance, double valence){
+        double [][] arr={{ethics},{age},{income},{pet},{relevance},{valence}};
         double [][] inv={{1/6,1/6,1/6,1/6,1/6,1/6}};
         MatrixComputation counterIndicative=new MatrixComputation(6,1, arr);
         MatrixComputation involvement=new MatrixComputation(1,6, inv);
