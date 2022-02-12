@@ -41,7 +41,8 @@ public class Concatenate {
 
         // Step 4: sentence formulation
         System.out.println(eth.compare());
-        sentenceFormulation(aff, val, rel);
+        sentenceFormulation(aff, val, rel);     // Ethics, Affordances, Relevance, Valence
+        invlNdistFormulation(aff, val, rel);    // Involvement, Distance
         System.out.println(sent1.toString()); System.out.println("\n");
         System.out.println(sent2.toString()); System.out.println(sent3.toString()); System.out.println("\n");
         System.out.println(sent4.toString());
@@ -77,6 +78,7 @@ public class Concatenate {
             else sent1.append(String.valueOf(affordanceFeatures[2])).append(" pets.");
 
             // sent3 num == 3
+            // +    +    +
             if(val.ValOfFeatures()[0] > 0 /* Ethics */)sent3.append(valence[0]).append("gives me ").append(val.getLevel()[0]).append(". ");
             if(count2s(aff) == 1){
                 // sent3 num == 3
@@ -124,17 +126,65 @@ public class Concatenate {
                 if(affordanceFeatures[2] == 1) sent1.append(String.valueOf(affordanceFeatures[2])).append(" pet");
                 else sent1.append(String.valueOf(affordanceFeatures[2])).append(" pets");
                 sent1.append(" but you are ").append(aff.compare()[0]).append(".");
+
+                // sent3 num == 2
+                // +    +    -
+                if(val.ValOfFeatures()[0] > 0 /* Ethics */)sent3.append(valence[0]).append("gives me ").append(val.getLevel()[0]).append(". ");
+                // -1/-2    2    2
+                if(aff.ValOfFeatures()[1] == aff.ValOfFeatures()[2]){
+                    sent3.append(valence[2]).append("and ").append(valence[3].toLowerCase()).append("give me ").append(val.getLevel()[3]).append(" that we will get along well. ");
+                }
+                // -1/-2    2    1
+                else if(aff.ValOfFeatures()[1] != aff.ValOfFeatures()[2]){
+                    sent3.append(valence[2]).append("gives me ").append(val.getLevel()[2]).append(". ");
+                    sent3.append(valence[3]).append("gives me ").append(val.getLevel()[3]).append(". ");
+                }
+                sent3.append("Yet, ").append(valence[1]).append("gives me ").append(val.getLevel()[1]);
+                if(val.ValOfFeatures()[0] < 0 /* Ethics */)sent3.append(" and ").append(valence[0].toLowerCase()).append("gives me ").append(val.getLevel()[0]).append(" that make me fear a bad outcome.");
+                else sent3.append(" that makes me fear a bad outcome. ");
             }
             else if(negIndex(aff) == 1){
                 sent1.append(aff.compare()[0]).append(" and you keep ");
                 if(affordanceFeatures[2] == 1) sent1.append(String.valueOf(affordanceFeatures[2])).append(" pet");
                 else sent1.append(String.valueOf(affordanceFeatures[2])).append(" pets");
                 sent1.append(" but you are ").append(aff.compare()[1]).append(".");
+
+                // sent3 num == 2
+                // +    +    -
+                if(val.ValOfFeatures()[0] > 0 /* Ethics */)sent3.append(valence[0]).append("gives me ").append(val.getLevel()[0]).append(". ");
+                // 2    -1/-2    2
+                if(aff.ValOfFeatures()[0] == aff.ValOfFeatures()[2]){
+                    sent3.append(valence[1]).append("and ").append(valence[3].toLowerCase()).append("give me ").append(val.getLevel()[3]).append(" that we will get along well. ");
+                }
+                // 2    -1/-2    1
+                else if(aff.ValOfFeatures()[0] != aff.ValOfFeatures()[2]){
+                    sent3.append(valence[1]).append("gives me ").append(val.getLevel()[1]).append(". ");
+                    sent3.append(valence[3]).append("gives me ").append(val.getLevel()[3]).append(". ");
+                }
+                sent3.append("Yet, ").append(valence[2]).append("gives me ").append(val.getLevel()[2]);
+                if(val.ValOfFeatures()[0] < 0 /* Ethics */)sent3.append(" and ").append(valence[0].toLowerCase()).append("gives me ").append(val.getLevel()[0]).append(" that make me fear a bad outcome.");
+                else sent3.append(" that makes me fear a bad outcome. ");
             }
             else if(negIndex(aff) == 2){
                 sent1.append(aff.compare()[0]).append(" and ").append(aff.compare()[1]).append(" but you ");
                 if(affordanceFeatures[2] == 0) sent1.append("don't keep pets.");
                 else sent1.append("keep ").append(String.valueOf(affordanceFeatures[2])).append(" pets.");
+
+                // sent3 num == 2
+                // +    +    -
+                if(val.ValOfFeatures()[0] > 0 /* Ethics */)sent3.append(valence[0]).append("gives me ").append(val.getLevel()[0]).append(". ");
+                // 2        2    -1/-2
+                if(aff.ValOfFeatures()[0] == aff.ValOfFeatures()[1]){
+                    sent3.append(valence[1]).append("and ").append(valence[2].toLowerCase()).append("give me ").append(val.getLevel()[2]).append(" that we will get along well. ");
+                }
+                // 1       2    -1/-2
+                else if(aff.ValOfFeatures()[0] != aff.ValOfFeatures()[1]){
+                    sent3.append(valence[1]).append("gives me ").append(val.getLevel()[1]).append(". ");
+                    sent3.append(valence[2]).append("gives me ").append(val.getLevel()[2]).append(". ");
+                }
+                sent3.append("Yet, ").append(valence[3]).append("gives me ").append(val.getLevel()[3]);
+                if(val.ValOfFeatures()[0] < 0 /* Ethics */)sent3.append(" and ").append(valence[0].toLowerCase()).append("gives me ").append(val.getLevel()[0]).append(" that make me fear a bad outcome.");
+                else sent3.append(" that makes me fear a bad outcome. ");
             }
         }
         else if(num == 1){
@@ -142,16 +192,61 @@ public class Concatenate {
                 sent1.append(aff.compare()[0]).append(" yet you are ").append(aff.compare()[1]).append(" and you ");
                 if(affordanceFeatures[2] == 0) sent1.append("don't keep pets.");
                 else sent1.append("have ").append(String.valueOf(affordanceFeatures[2])).append(" pets.");
+
+                // sent3 num == 1
+                // +    -    -
+                if(val.ValOfFeatures()[0] > 0 /* Ethics */)sent3.append(valence[0]).append("gives me ").append(val.getLevel()[0]).append(". ");
+                // 2       -1       -1
+                if(aff.ValOfFeatures()[1] == aff.ValOfFeatures()[2]){
+                    sent3.append(valence[1]).append("gives me ").append(val.getLevel()[1]).append(". ");
+                    sent3.append("Yet, ").append(valence[2].toLowerCase()).append("and ").append(valence[3].toLowerCase()).append("give me ").append(val.getLevel()[2]).append(" that make me fear a bad outcome. ");
+                }
+                // 2       -2       -1
+                else if(aff.ValOfFeatures()[1] != aff.ValOfFeatures()[2]){
+                    sent3.append(valence[1]).append("gives me ").append(val.getLevel()[1]).append(". ");
+                    sent3.append("Yet, ").append(valence[2].toLowerCase()).append("gives me ").append(val.getLevel()[2]).append(" and ").append(valence[3].toLowerCase()).append("gives me ").append(val.getLevel()[3]).append(" that make me fear a bad outcome. ");
+                }
+                if(val.ValOfFeatures()[0] < 0 /* Ethics */)sent3.append(valence[0]).append("gives me ").append(val.getLevel()[0]).append(" that makes me hesitate.");
             }
             else if(posIndex(aff) == 1){
                 sent1.append(aff.compare()[1]).append(" yet you are ").append(aff.compare()[0]).append(" and you ");
                 if(affordanceFeatures[2] == 0) sent1.append("don't keep pets.");
                 else sent1.append("have ").append(String.valueOf(affordanceFeatures[2])).append(" pets.");
+
+                // sent3 num == 1
+                // -    +    -
+                if(val.ValOfFeatures()[0] > 0 /* Ethics */)sent3.append(valence[0]).append("gives me ").append(val.getLevel()[0]).append(". ");
+                // -1       2       -1
+                if(aff.ValOfFeatures()[0] == aff.ValOfFeatures()[2]){
+                    sent3.append(valence[2]).append("gives me ").append(val.getLevel()[2]).append(". ");
+                    sent3.append("Yet, ").append(valence[1].toLowerCase()).append("and ").append(valence[3].toLowerCase()).append("give me ").append(val.getLevel()[3]).append(" that make me fear a bad outcome. ");
+                }
+                // -1       2       -2
+                else if(aff.ValOfFeatures()[0] != aff.ValOfFeatures()[2]){
+                    sent3.append(valence[2]).append("gives me ").append(val.getLevel()[2]).append(". ");
+                    sent3.append("Yet, ").append(valence[1].toLowerCase()).append("gives me ").append(val.getLevel()[1]).append(" and ").append(valence[3].toLowerCase()).append("gives me ").append(val.getLevel()[3]).append(" that make me fear a bad outcome. ");
+                }
+                if(val.ValOfFeatures()[0] < 0 /* Ethics */)sent3.append(valence[0]).append("gives me ").append(val.getLevel()[0]).append(" that makes me hesitate.");
             }
             else if(posIndex(aff) == 2){
                 sent1.append(aff.compare()[0]).append(" and ").append(aff.compare()[1]).append(" but you keep ");
                 if(affordanceFeatures[2] == 1) sent1.append(String.valueOf(affordanceFeatures[2])).append(" pet.");
                 else sent1.append(String.valueOf(affordanceFeatures[2])).append(" pets.");
+
+                // sent3 num == 1
+                // -    -    +
+                if(val.ValOfFeatures()[0] > 0 /* Ethics */)sent3.append(valence[0]).append("gives me ").append(val.getLevel()[0]).append(". ");
+                // -1       -1       2
+                if(aff.ValOfFeatures()[0] == aff.ValOfFeatures()[1]){
+                    sent3.append(valence[3]).append("gives me ").append(val.getLevel()[3]).append(". ");
+                    sent3.append("Yet, ").append(valence[1].toLowerCase()).append("and ").append(valence[2].toLowerCase()).append("give me ").append(val.getLevel()[2]).append(" that make me fear a bad outcome. ");
+                }
+                // -1       -2       2
+                else if(aff.ValOfFeatures()[0] != aff.ValOfFeatures()[1]){
+                    sent3.append(valence[3]).append("gives me ").append(val.getLevel()[3]).append(". ");
+                    sent3.append("Yet, ").append(valence[1].toLowerCase()).append("gives me ").append(val.getLevel()[1]).append(" and ").append(valence[2].toLowerCase()).append("gives me ").append(val.getLevel()[2]).append(" that make me fear a bad outcome. ");
+                }
+                if(val.ValOfFeatures()[0] < 0 /* Ethics */)sent3.append(valence[0]).append("gives me ").append(val.getLevel()[0]).append(" that makes me hesitate.");
             }
         }
 
@@ -209,5 +304,9 @@ public class Concatenate {
         }
         //System.out.print(num); System.out.println("\n"); // For debugging
         return num;
+    }
+
+    private static void invlNdistFormulation(Affordance aff, Valence val, Relevance[] rel){
+
     }
 }
