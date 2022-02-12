@@ -39,6 +39,7 @@ public class Concatenate {
         Relevance[] rel = {new Relevance(0.657), new Relevance(0.9), new Relevance(0.312), new Relevance(0.76)};
         Involvement invl = new Involvement(ETHICS, aff.convert(affordanceFeatures[0], 0), aff.convert(affordanceFeatures[1], 1), aff.convert(affordanceFeatures[2], 2),  0.75,  0.4);
         Distance dist = new Distance(ETHICS, aff.convert(affordanceFeatures[0], 0), aff.convert(affordanceFeatures[1], 1), aff.convert(affordanceFeatures[2], 2),  0.25,  0.4);
+        UserIntention useInt = new UserIntention(ETHICS, aff.convert(affordanceFeatures[0], 0), aff.convert(affordanceFeatures[1], 1), aff.convert(affordanceFeatures[2], 2));
 
         // Step 4: sentence formulation
         System.out.println(eth.compare());
