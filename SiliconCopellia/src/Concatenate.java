@@ -19,7 +19,7 @@ public class Concatenate {
 
     private static StringBuffer sent1 = new StringBuffer("You are ");               // Ethics and Affordances
     private static StringBuffer sent2 = new StringBuffer("I find ");                // Relevance: What is important and what is not
-    private static StringBuffer sent3 = new StringBuffer(""); // Valence: hope/fear a pos/neg outcome
+    private static StringBuffer sent3 = new StringBuffer("");                       // Valence: hope/fear a pos/neg outcome
     private static StringBuffer sent4 = new StringBuffer("Therefore, ");            // Involvement and Distance
 
     public static void main(String[] args) throws Exception {
@@ -44,7 +44,7 @@ public class Concatenate {
         // Step 4: sentence formulation
         System.out.println(eth.compare());
         sentenceFormulation(aff, val, rel);     // Ethics, Affordances, Relevance, Valence
-        invlNdistFormulation(aff, val, rel);    // Involvement, Distance
+        invlNdistFormulation(invl, dist, useInt);    // Involvement, Distance
         System.out.println(sent1.toString()); System.out.println("\n");
         System.out.println(sent2.toString()); System.out.println(sent3.toString()); System.out.println("\n");
         System.out.println(sent4.toString());
@@ -308,7 +308,10 @@ public class Concatenate {
         return num;
     }
 
-    private static void invlNdistFormulation(Affordance aff, Valence val, Relevance[] rel){
-        Involvement inv=new Involvement(ETHICS,)
+    private static void invlNdistFormulation(Involvement invl, Distance dist, UserIntention useInt){
+        sent4.append(invl.getDistance()).append(". Yet, ").append(dist.getDistance()).append(".\n");
+        sent4.append(useInt.getUseIntention());
+        // aff.convert(affordanceFeatures[i], i)
+        // i = 0, 1, 2
     }
 }
