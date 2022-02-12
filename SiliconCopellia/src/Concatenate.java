@@ -43,7 +43,7 @@ public class Concatenate {
         // Step 4: sentence formulation
         System.out.println(eth.compare());
         sentenceFormulation(aff, val, rel);     // Ethics, Affordances, Relevance, Valence
-        invlNdistFormulation(aff, val, rel);    // Involvement, Distance
+        invlNdistFormulation(invl, dist, aff, val, rel);    // Involvement, Distance
         System.out.println(sent1.toString()); System.out.println("\n");
         System.out.println(sent2.toString()); System.out.println(sent3.toString()); System.out.println("\n");
         System.out.println(sent4.toString());
@@ -307,7 +307,7 @@ public class Concatenate {
         return num;
     }
 
-    private static void invlNdistFormulation(Affordance aff, Valence val, Relevance[] rel){
-        Involvement inv=new Involvement(ETHICS,)
+    private static void invlNdistFormulation(Involvement invl, Distance dis, Affordance aff, Valence val, Relevance[] rel){
+
     }
 }
