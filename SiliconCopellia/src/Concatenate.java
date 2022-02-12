@@ -63,8 +63,8 @@ public class Concatenate {
     private static void usrIntro(){
 
         JFrame jFrame = new JFrame(); // https://www.delftstack.com/howto/java/java-pop-up-window/
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        jFrame.setPreferredSize(new Dimension(screenSize.width * 2 / 3, screenSize.height * 2 / 3));
+        //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        //jFrame.setSize(1000,900);
         affordanceFeatures[0] = parseInt(JOptionPane.showInputDialog(jFrame, "What is your age?"));
         affordanceFeatures[1] = parseInt(JOptionPane.showInputDialog(jFrame, "What is your monthly income?"));
         affordanceFeatures[2] = parseInt(JOptionPane.showInputDialog(jFrame, "How many pets do you have?"));
