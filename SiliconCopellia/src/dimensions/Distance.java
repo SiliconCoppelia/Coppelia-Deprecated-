@@ -22,7 +22,7 @@ public class Distance{
     }
 
     public String getDistance() {
-        return distance[(int)num];
+        return distance[(int)(num*5)];
     }
 
     /*

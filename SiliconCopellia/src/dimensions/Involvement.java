@@ -28,7 +28,7 @@ public class Involvement{
     }
 
     public String getDistance() {
-        return invl[(int)num];
+        return invl[(int)(num*5)];
     }
 
 

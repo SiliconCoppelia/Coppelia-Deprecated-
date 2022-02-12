@@ -1,12 +1,12 @@
 # Silicon Coppélia
-Silicon Coppélia is a software for making robots response affactively to other agents.
+Silicon Coppélia is a software for making robots response affectively to other agents.
 This project aims to cope with the number produced by Coppélia during the affection/emotion processing process and make Coppélia talks by applying NLP.  
 
 # Installation
 The project is still in its development phase. Source code and README files will be updated periodically
 
 # To-Do
-- [x] The first tasks will be **mapping the numbers to a pool of fix sentances**
+- [x] The first tasks will be **mapping the numbers to a pool of fix sentences**
 - [x]  ~~Audio sound to read out the output string(TTS)~~(This function is currently disabled)  
 - [x]  Implement version 2 with new model and detailed reasoning between the input features and the output sentence  
 - Version 2:  
