@@ -9,7 +9,7 @@ public class Relevance {
     private float num;
     private String level;
     //private String[] rel=new String[]{"cheat on exams","cooking for home"};
-    private double relevance;
+    public double relevance;
 
     public Relevance(double RELEVANCE){
         this.relevance=RELEVANCE;
