@@ -6,11 +6,11 @@ public class Distance{
     private int index;
     public double num;
     private String[] distance = {
-            "I have extremely reservations about you",
-            "I have much reservations about you",
-            "I have reservations about you",
-            "I somewhat have reservations about you",
-            "I have little reservations about you"
+            "I still have extremely reservations about you",
+            "I still have much reservations about you",
+            "I still have reservations about you",
+            "I still somewhat have reservations about you",
+            "I still have little reservations about you"
     };
 
     public Distance(double ethics, double age, double income, double pet, double irrelevance, double valence){
@@ -36,7 +36,6 @@ public class Distance{
         else if (this.num < 0.6 && this.num >= 0.4) this.index = 2;
         else if (this.num < 0.8 && this.num >= 0.6) this.index = 1;
         else  this.index = 0;
-
         return this.distance[this.index];
     }*/
 }
