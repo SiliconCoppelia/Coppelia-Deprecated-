@@ -21,14 +21,14 @@ public class Involvement{
 
     public Involvement(double ethics, double age, double income, double pet, double relevance, double valence){
         double [][] arr={{ethics},{age},{income},{pet},{relevance},{valence}};
-        double [][] inv={{1/6,1/6,1/6,1/6,1/6,1/6}};
+        double [][] B_i={{1/6,1/6,1/6,1/6,1/6,1/6}};
         MatrixComputation counterIndicative=new MatrixComputation(6,1, arr);
-        MatrixComputation involvement=new MatrixComputation(1,6, inv);
+        MatrixComputation involvement=new MatrixComputation(1,6, B_i);
         this.num = involvement.multiple(involvement, counterIndicative)[0][0];
     }
 
     public String getDistance() {
-        return invl[(int)(num*5)];
+        return invl[(int)(this.num*5)];
     }
 
 

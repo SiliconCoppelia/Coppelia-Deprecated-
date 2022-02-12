@@ -6,24 +6,41 @@ public class UserIntention{
 
     private int index;
     private double num;
-    private double valenceNum;
+    //private double valenceNum;
 
-    private final String[] useIntentionPositive = {"I will invite you to go on a date with me.",
+    private final String[] useIntentionPositive = {
+            "I will invite you to go on a date with me.",
             "I want to invite you on a date.",
             "I will actively arrange a date with you.",
             "I desperately want to date you."};
-    private final String[] useIntentionNegative = {"Maybe we could do something else together.",
+    private final String[] useIntentionNegative = {
+            "Maybe we could do something else together.",
             "I have reservations about dating you.",
             "I somewhat refuse to date you.",
             "I'll have to refuse you directly in arranging a date with you."};
 
-    public UserIntention(double num, double valenceNum){
-        this.num = num;
-        this.valenceNum = valenceNum;
+    public UserIntention(double ethics, double age, double income, double pet){
+        double [][] arr={{ethics},{age},{income},{pet}};
+        double [][] B_ui={{1/4,1/4,1/4,1/4}};
+        MatrixComputation counterIndicative=new MatrixComputation(4,1, arr);
+        MatrixComputation userIntention=new MatrixComputation(1,4, B_ui);
+        this.num = userIntention.multiple(userIntention, counterIndicative)[0][0];
+        //this.num = num;
+        //this.valenceNum = valenceNum;
         //System.out.println(str.append("The input number is: ").append(super.readInput()));    //For Debugging
     }
 
+    public String getUseIntention() {
+        if(this.num>0.5){
+            return useIntentionPositive[(int)((this.num-0.5)*0.25)];
+        }
+        else{
+            return useIntentionNegative[(int)(this.num*0.25)];
+        }
 
+    }
+
+    /*
     public String compare(){
         double i = 0.25;
         while(i < this.num){
@@ -41,4 +58,6 @@ public class UserIntention{
             return this.useIntentionNegative[this.index];
         }
     }
+
+ */
 }

@@ -15,14 +15,14 @@ public class Distance{
 
     public Distance(double ethics, double age, double income, double pet, double irrelevance, double valence){
         double [][] arr={{ethics},{age},{income},{pet},{irrelevance},{valence}};
-        double [][] dis={{1/6,1/6,1/6,1/6,1/6,1/6}};
+        double [][] B_d={{1/6,1/6,1/6,1/6,1/6,1/6}};
         MatrixComputation counterIndicative=new MatrixComputation(6,1, arr);
-        MatrixComputation distance=new MatrixComputation(1,6, dis);
+        MatrixComputation distance=new MatrixComputation(1,6, B_d);
         this.num = distance.multiple(distance, counterIndicative)[0][0];
     }
 
     public String getDistance() {
-        return distance[(int)(num*5)];
+        return distance[(int)(this.num*5)];
     }
 
     /*
