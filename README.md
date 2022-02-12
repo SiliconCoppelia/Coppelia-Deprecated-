@@ -14,9 +14,9 @@ The project is still in its development phase. Source code and README files will
 - [x]  Yooki: Modify Relevance class, Valence class, Involvement, and Distance
 - [x]  Anthony: Ethics and Affordance class  
 - Version 3:  
-- [ ] Main, Affordance, and UseIntension Matrix: Tommy
-- [ ] Involvement and Distance Matrix: Yooki
-- [ ] Relevance and Valance: Anthony
+- [x] Main, Affordance, and UseIntension Matrix: Tommy
+- [x] Involvement and Distance Matrix: Yooki
+- [x] Relevance and Valance: Anthony
 
 # Authors
 - [CHEN Yi pu](https://github.com/BanjiBear)
@@ -28,4 +28,4 @@ The project is still in its development phase. Source code and README files will
 See [License](https://github.com/SiliconCoppeliaJohanProject/Copellia/blob/08f33eda7ebde820bf5f5e5d72aba8423b845286/LICENSE)
 
 # Reference
-J. F. Hoorn, T. Baier, J. A. N. Van Maanen and J. Wester, "Silicon Coppélia and the Formalization of the Affective Process," in IEEE Transactions on Affective Computing, doi: 10.1109/TAFFC.2020.3048587.
+[J. F. Hoorn, T. Baier, J. A. N. Van Maanen and J. Wester, "Silicon Coppélia and the Formalization of the Affective Process," in IEEE Transactions on Affective Computing, doi: 10.1109/TAFFC.2020.3048587.](https://research.polyu.edu.hk/en/publications/silicon-coppelia-and-the-formalization-of-the-affective-process)
