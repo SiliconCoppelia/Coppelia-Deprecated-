@@ -4,6 +4,7 @@ package dimensions;
 
 public class Affordance{
 
+    private double num;
     private int[] affordanceFeatures;
     private int[] valOfFeatures = new int[3];
     private String[] features = new String[2];
@@ -71,5 +72,27 @@ public class Affordance{
             }
         }
         return valOfFeatures;
+    }
+
+    public double convert(int feature, int FEATURES){
+        if(FEATURES == 0){
+            if(feature < 14 || feature > 55) num = 0;
+            else if(feature > 14 && feature < 21) num = 0.75;
+            else if(feature > 21 && feature < 33) num = 1;
+            else if(feature > 33 && feature < 55) num = 0.25;
+        }
+        else if(FEATURES == 1){
+            if(feature < 2000) num = 0.2;
+            else if(feature < 5000) num = 0.4;
+            else if(feature < 10000) num = 0.6;
+            else if(feature < 50000) num = 0.8;
+            else num = 1;
+        }
+        else if(FEATURES == 2){
+            if(feature == 1 || feature == 2) num = 1;
+            else if(feature == 3 || feature == 4 || feature == 0) num = 0.75;
+            else num = 0.25;
+        }
+        return num;
     }
 }
